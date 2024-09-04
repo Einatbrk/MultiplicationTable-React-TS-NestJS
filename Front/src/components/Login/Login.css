@@ -1,0 +1,29 @@
+.login-container {
+  text-align: center;
+}
+
+.gender-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.gender-image {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.boy-selected {
+  border: 5px solid blue;
+}
+
+.girl-selected {
+  border: 5px solid pink;
+}
+
+button {
+  margin-top: 20px;
+}
