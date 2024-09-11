@@ -1,11 +1,12 @@
 import React from 'react';
-import { InputProps } from './Input.types';
+import { InputProps } from './Input.types.ts';
 
-const Input: React.FC<InputProps> = ({ label, type, value, onChange }) => {
+const Input: React.FC<InputProps> = ({ label, type, value, onChange, placeholder }) => {
   return (
     <div>
       <label>{label}</label>
-      <input type={type} value={value} onChange={onChange} />
+      <br />
+      <input type={type} value={value} onChange={onChange} placeholder={placeholder}/>
     </div>
   );
 };

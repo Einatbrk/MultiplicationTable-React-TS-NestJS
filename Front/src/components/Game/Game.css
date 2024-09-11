@@ -1,0 +1,13 @@
+.game-container {
+  text-align: center;
+  height: calc(100% - 50px); /* Adjust to ensure space for header and buttons */
+  width: 100%;
+  max-width: 800px; /* Ensure the table doesn't overflow */
+  border: 3px solid purple;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.current-score{
+  border: 3px solid gray;
+}

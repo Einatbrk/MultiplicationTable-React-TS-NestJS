@@ -1,6 +1,39 @@
+
 .login-container {
+  position: relative;
+  display: flex;
+  direction: rtl;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  background-image: url('/images/login.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.side-image {
+  position: absolute;
+  top: 0;
+  width: 15%; 
+  height: 100%; 
+  object-fit: contain; 
+}
+
+.side-image.left {
+  left: 30px;
+}
+
+.side-image.right {
+  right: 30px; 
+}
+
+.login-content {
+  z-index: 1; 
   text-align: center;
 }
+
 
 .gender-selection {
   display: flex;
@@ -10,7 +43,7 @@
 }
 
 .gender-image {
-  width: 150px;
+  width: 100px;
   height: 150px;
   cursor: pointer;
   transition: border 0.3s ease;
@@ -18,12 +51,23 @@
 
 .boy-selected {
   border: 5px solid blue;
+  border-radius: 5px;
 }
 
 .girl-selected {
   border: 5px solid pink;
+  border-radius: 5px;
 }
 
-button {
-  margin-top: 20px;
+.buttons-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.buttons-container button{
+  border: 1px solid red;
+  border-radius: 5px;
+  color: white;
+  background-color: cornflowerblue;
+  padding: 5px 10px;
 }

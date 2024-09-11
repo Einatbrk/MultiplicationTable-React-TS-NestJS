@@ -1,8 +1,14 @@
 import React from 'react';
 import Login from '../components/Login/Login';
+import './LoginPage.css';
+
 
 const LoginPage: React.FC = () => {
-  return <Login />;
+  return (
+    <div className="LoginPage">
+      <Login />
+    </div>
+  )
 };
 
 export default LoginPage;
