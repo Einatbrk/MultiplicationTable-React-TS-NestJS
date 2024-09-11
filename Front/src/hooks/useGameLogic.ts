@@ -78,8 +78,7 @@ export const useGameLogic = () => {
     console.log(`Exiting game for player ${playerName} with final score: ${score}, gameId: ${gameId}`);
     if (confirmExitGame()) {
       console.log(`Exiting game for player ${playerName} with final score: ${score}, gameId: ${gameId}`);
-      
-      // Check if the score is correct
+
       if (score === 0) {
         console.warn('Score is 0 on exit. Ensure this is expected.');
       }
