@@ -53,27 +53,27 @@ const Login: React.FC = () => {
           <img
             src={BoyImage}
             alt="Boy"
-            className={`gender-image ${selectedGender === 'boy' ? 'boy-selected' : ''}`}
+            className={`login-gender-image ${selectedGender === 'boy' ? 'boy-selected' : ''}`}
             onClick={() => onGenderSelect('boy')}
           />
           <img
             src={GirlImage}
             alt="Girl"
-            className={`gender-image ${selectedGender === 'girl' ? 'girl-selected' : ''}`}
+            className={`login-gender-image ${selectedGender === 'girl' ? 'girl-selected' : ''}`}
             onClick={() => onGenderSelect('girl')}
           />
         </div>
 
         <div className='buttons-container'>
-          <Button
+          <Button className='start-game-button'
             onClick={() => onStartGame(playerName, selectedGender, navigate)}
           >
             בואו נתחיל!
           </Button>
-          <Button onClick={()=>loadWinners()}>טבלת האלופים</Button>
+          <Button className='top-left-button' onClick={()=>loadWinners()}>טבלת האלופים</Button>
         </div>
         {showTopWinnersModal && (
-          <WinnersTable onClose={closeWinnersModal} />  // Render WinnersTable as a modal
+          <WinnersTable onClose={closeWinnersModal} />  
         )}
         
       </div>

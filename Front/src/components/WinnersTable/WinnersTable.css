@@ -1,0 +1,39 @@
+.podium-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .podium-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .winner {
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* First place (center, top) */
+  .first-place {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Second place (left, middle) */
+  .second-place {
+    top: 30%;
+    left: 20%;
+  }
+  
+  /* Third place (right, middle) */
+  .third-place {
+    top: 30%;
+    right: 20%;
+  }
+  
+  

@@ -3,6 +3,7 @@ import WinnersTable from "../components/WinnersTable/WinnersTable";
 import { getTopWinners } from "../utils/winnersTableUtils";
 import { Winner } from "../components/WinnersTable/WinnersTable.types";
 
+
 const WinnersTablePage: React.FC = () => {
     
     const [winners, setWinners] = useState<Winner[]>([]);
@@ -25,11 +26,13 @@ const WinnersTablePage: React.FC = () => {
     }, []);
     return (
         <div className="winners-table-container">
-           <WinnersTable
-            winners={winners}
-            loading={loading}
-            error={error}
-        />
+           <div>
+               <WinnersTable
+                winners={winners}
+                loading={loading}
+                error={error}
+                       />
+           </div>
         </div>
     )
 }

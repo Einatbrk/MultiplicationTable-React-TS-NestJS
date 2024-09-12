@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import { getTopWinners, resetWinnersTable } from "../../utils/winnersTableUtils";
 import Button from "../UI/Button/Button";
 import { Winner, WinnersTableProps } from "./WinnersTable.types";
+import Podium from '/images/podium.jpg'
 import './WinnersTable.css';
 
-const WinnersTable: React.FC<WinnersTableProps> = ({ onClose }) => {
+const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
   const [winners, setWinners] = useState<Winner[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -36,28 +37,45 @@ const WinnersTable: React.FC<WinnersTableProps> = ({ onClose }) => {
   return (
     <div className="modal-backdrop">
       <div className="modal-content">
-        <div>
-          {onClose && (
-            <button onClick={onClose} className="close-button">
-              סגירה
-            </button>
-          )}
-          <h2>Top 3 Winners</h2>
-          {loading ? (
-            <p>Loading...</p>
-          ) : error ? (
-            <p>{error}</p>
-          ) : (
-            <ul>
-              {winners.map((winner: Winner, index: number) => (
-                <li key={index}>
-                  {index + 1}. {winner.playerName} - Score: {winner.score}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-        <Button onClick={handleResetWinners}>Reset Table</Button>
+        
+        <h2>Top 3 Winners</h2>
+
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          <div className="podium-container">
+            <img src={Podium} alt="Winners Podium" className="podium-image" />
+            {winners.length > 0 && (
+              <>
+                <div className="winner first-place">
+                  <p>{winners[0].playerName}</p>
+                  <p>{winners[0].score}</p>
+                </div>
+                {winners.length > 1 && (
+                  <div className="winner second-place">
+                    <p>{winners[1].playerName}</p>
+                    <p>{winners[1].score}</p>
+                  </div>
+                )}
+                {winners.length > 2 && (
+                  <div className="winner third-place">
+                    <p>{winners[2].playerName}</p>
+                    <p>{winners[2].score}</p>
+                  </div>
+                )}
+              </>
+            )}
+              <div className="buttons-container">
+                <Button onClick={handleResetWinners}>איפוס טבלה</Button>
+                <Button onClick={onClose}>סגירה</Button>
+              </div>
+          </div>
+        )}
+
+          
+
       </div>
     </div>
   );
