@@ -39,6 +39,7 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
           <img src={imageUrl} alt={`${gender} ${isCorrect ? 'Correct' : 'Incorrect'}`} className="response-image" />
           <h2 style={{direction: "rtl" }}>{isCorrect ? 'נכון מאוד!' : 'טעות'}</h2>
           <p>התשובה הנכונה היא: {correctAnswer}.</p>
+          <Button onClick={onClose}>סגירה</Button>
         </div>
       );
     }
@@ -48,8 +49,8 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
           <p>:שאלה</p>
           <span>{` ${selectedCell.row} x ${selectedCell.col}?`}</span>
           <Input type="number" value={answer} onChange={(e) => setAnswer(e.target.value)} />
-          {isCorrect === null && <Button onClick={handleSubmit}>Submit</Button>}
-        <Button onClick={onClose}>Close</Button>
+          {isCorrect === null && <Button onClick={handleSubmit}>שלח תשובה</Button>}
+        <Button onClick={onClose}>סגירה</Button>
         </div>
       </>
     );
