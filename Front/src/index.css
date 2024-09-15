@@ -10,7 +10,7 @@ body {
   background-color: white;
   height:100vh;
   color: #333;
-  border: 3px solid red;
+  display: flex;
 }
 
 /* Basic layout styling */

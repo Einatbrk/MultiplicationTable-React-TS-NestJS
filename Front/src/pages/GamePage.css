@@ -5,12 +5,30 @@
     background-size: contain;
     background-repeat: repeat;
     background-position: center;
-    border: 3px solid blue;
     display: flex;
     flex-direction: column;
-    justify-content:flex-start; /* Align content to the top */
-    overflow: hidden; /* Ensure content doesn't overflow */
+    
 }
-.exit-button{
-    margin: 10px;
+.game-component-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center content vertically */
+    align-items: center;  
+}
+
+.finish-button-container{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.finish-button-container button{
+    font-family: 'Rounded Mplus 1c';
+    font-size: large;
+    padding: 15px 20px;
+    background-color: #cf58dc;
+    color: black;
+    font-size: medium;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
 }

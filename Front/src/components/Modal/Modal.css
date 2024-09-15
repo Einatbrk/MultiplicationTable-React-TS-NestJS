@@ -6,17 +6,32 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  background-color: white;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  width: 300px;
+  width: 350px;
   height: auto;
+  font-family: 'dida FM';
+  font-size: large;
+  font-weight: bold;
+}
+.modal-content span{
+  direction: rtl;
+  padding: 20px;
+}
+.modal-content p{
+  direction: rtl;
+  padding: 10px;
+}
+.modal-content img{
+  height: 75%;
+  width: auto;
 }
 
 /* Correct answer styles */

@@ -36,10 +36,12 @@
   height: 70%; /* Keep the height as it was */
   width: 40%; /* Adjust the width to make it bigger */
   max-width: 600px; /* Ensure it doesn't get too large on big screens */
-  padding: 20px; /* Add padding to create space inside the box */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
+  font-family: 'Rounded Mplus 1c';
+  font-weight: bolder;
+  font-size: 18px;
 }
 
 
@@ -75,8 +77,9 @@
   border-radius: 5px;
   color: white;
   background-color: cornflowerblue;
+  font-family: 'Rounded Mplus 1c';
   padding: 5px 10px;
-  margin-bottom: 20px;
+  margin-right: 0px;
 }
 .top-left-button {
   position: absolute;
@@ -88,6 +91,8 @@
   font-weight: 100;
   border-radius: 5px;
   color:black;
+  font-family: 'Rounded Mplus 1c';
+  font-weight: bolder;
   background-color: gold;
   padding: 10px 15px;
 }

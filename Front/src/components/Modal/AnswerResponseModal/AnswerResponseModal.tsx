@@ -10,18 +10,13 @@ import GirlIncorrectImg from '/images/wrongGirl.jpg';
 
 
 const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, selectedCell, onCorrectAnswer, isCorrect, gender }) => {
-  console.log(`AnswerResponseModal received gender: ${gender}`)
   const [answer, setAnswer] = useState<string>('');
   const correctAnswer = selectedCell.row * selectedCell.col;
 
   const handleSubmit = () => {
-    console.log('AnswerResponseModal- handle submit starting');
-  
     if (parseInt(answer, 10) === correctAnswer) {
-      console.log('AnswerResponseModal- calling onCorrectAnswer(true)');
       onCorrectAnswer(true); // Pass `true` for correct answer
     } else {
-      console.log(`AnswerResponseModal- Incorrect answer, calling onCorrectAnswer(false)`);
       onCorrectAnswer(false); // Pass `false` for incorrect answer
     }
   };
@@ -39,29 +34,31 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
     }
 
     if (isCorrect !== null) {
-      // Correct or Incorrect state
       return (
         <div className="modal-content" style={{ backgroundColor }}>
           <img src={imageUrl} alt={`${gender} ${isCorrect ? 'Correct' : 'Incorrect'}`} className="response-image" />
-          <h2>{isCorrect ? 'Correct!' : 'Incorrect'}</h2>
-          <p>The correct answer is {correctAnswer}.</p>
+          <h2 style={{direction: "rtl" }}>{isCorrect ? 'נכון מאוד!' : 'טעות'}</h2>
+          <p>התשובה הנכונה היא: {correctAnswer}.</p>
         </div>
       );
     }
     return (
       <>
-        <h2>{`What is ${selectedCell.row} x ${selectedCell.col}?`}</h2>
-        <Input type="number" value={answer} onChange={(e) => setAnswer(e.target.value)} />
+        <div className='modal-content' style={{ background: "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)"}}>
+          <p>:שאלה</p>
+          <span>{` ${selectedCell.row} x ${selectedCell.col}?`}</span>
+          <Input type="number" value={answer} onChange={(e) => setAnswer(e.target.value)} />
+          {isCorrect === null && <Button onClick={handleSubmit}>Submit</Button>}
+        <Button onClick={onClose}>Close</Button>
+        </div>
       </>
     );
   };
       
   return (
     <div className="modal-backdrop">
-      <div className="modal-content">
+      <div className="modal-backdrop">
         {getResponseContent()}
-        {isCorrect === null && <Button onClick={handleSubmit}>Submit</Button>}
-        <Button onClick={onClose}>Close</Button>
       </div>
     </div>
   );

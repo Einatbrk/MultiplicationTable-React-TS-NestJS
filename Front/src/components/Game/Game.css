@@ -1,13 +1,14 @@
 .game-container {
-  text-align: center;
-  height: calc(100% - 50px); /* Adjust to ensure space for header and buttons */
-  width: 100%;
-  max-width: 800px; /* Ensure the table doesn't overflow */
-  border: 3px solid purple;
   display: flex;
   flex-direction: column;
+  justify-content: center;  /* Center content vertically */
+  align-items: center;      /* Center content horizontally */
+  text-align: center;
+  width: 100%;
   overflow: hidden;
 }
 .current-score{
-  border: 3px solid gray;
+  font-family: 'Rounded Mplus 1c';
+  font-weight: bolder;
+  font-size: larger;
 }

@@ -11,7 +11,7 @@ const Table: React.FC<TableProps> = ({ onCellClick, cellStatus, onResetGame}) =>
         <thead>
           <tr>
             <th>
-            <button className="reset-button" onClick={onResetGame}>Reset Game</button>
+            <button className="reset-button" onClick={onResetGame}>משחק חדש</button>
             </th>
             {Array.from({ length: 10 }, (_, col) => (
               <th key={col + 1} className="bordered-header">{col + 1}</th>

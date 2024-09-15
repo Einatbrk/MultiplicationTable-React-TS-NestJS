@@ -15,10 +15,14 @@ const GamePage:React.FC=()=>{
     return (
         <div className="game-page-container">
             <GameHeader />
-            <Game updateScore={updateScore}/>
-            <Button onClick={() => handleFinishGame(playerName,score, gameId)}>
-                סיום משחק
-            </Button>
+            <div className="game-component-container">
+                <Game updateScore={updateScore}/>
+            </div>
+            <div className="finish-button-container">
+                <Button onClick={() => handleFinishGame(playerName,score, gameId)}>
+                    סיום משחק
+                </Button>
+            </div>
         </div>
     )
 }
