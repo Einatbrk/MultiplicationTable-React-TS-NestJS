@@ -47,7 +47,6 @@ const Login: React.FC = () => {
           onChange={handlePlayerNameChange}
           placeholder="מה שמך?"
         />
-        <br />
         <h4>אני...</h4>
         <div className="gender-selection">
           <img
@@ -64,7 +63,7 @@ const Login: React.FC = () => {
           />
         </div>
 
-        <div className='buttons-container'>
+        <div className='login-buttons-container'>
           <Button className='start-game-button'
             onClick={() => onStartGame(playerName, selectedGender, navigate)}
           >

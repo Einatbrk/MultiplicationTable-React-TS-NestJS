@@ -1,0 +1,71 @@
+.login-buttons-container .start-game-button{
+    border: 2px solid red;
+    border-radius: 5px;
+    color: white;
+    font-size: medium;
+    background-color: cornflowerblue;
+    font-family: 'Rounded Mplus 1c';
+    padding: 5px 30px;
+    margin-right: 0px;
+  }
+  .top-left-button {
+    position: absolute;
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    z-index: 10; /* Ensures it's on top of other content */
+    border: 2px solid black;
+    font-size:x-large;
+    font-weight: 100;
+    border-radius: 5px;
+    color:black;
+    font-family: 'Rounded Mplus 1c';
+    font-weight: bolder;
+    background-color: gold;
+    padding: 10px 15px;
+  }
+  .initial-button {
+    background-color: #3498db;
+    color: white;
+    font-size: medium;
+    border-radius: 25%;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent; /* No border on the button */
+    margin: 0 auto; /* Center button horizontally */
+  }
+  
+  /* Reset button styling */
+  .reset-button {
+    background-color: #cf58dc;
+    color: black;
+    font-size: medium;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .modal-winners button{
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color:#ffec64;
+    border-radius: 10px;
+    border:2px solid black;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffee66;
+  }
+  .buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }

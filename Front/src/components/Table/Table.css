@@ -31,27 +31,3 @@
   border: none;
 }
 
-/* Buttons in content cells */
-.initial-button {
-  background-color: #3498db;
-  color: white;
-  font-size: medium;
-  border-radius: 25%;
-  width: 50px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid transparent; /* No border on the button */
-  margin: 0 auto; /* Center button horizontally */
-}
-
-/* Reset button styling */
-.reset-button {
-  background-color: #cf58dc;
-  color: black;
-  font-size: medium;
-  border-radius: 15px;
-  padding: 10px;
-  cursor: pointer;
-}

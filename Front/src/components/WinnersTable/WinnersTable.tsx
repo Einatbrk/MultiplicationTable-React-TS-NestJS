@@ -35,8 +35,8 @@ const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
   };
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal-content">
+    <div className="modal-winners">
+      <div className="modal-winners-content">
         
         <h2>Top 3 Winners</h2>
 
