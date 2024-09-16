@@ -1,0 +1,64 @@
+.startGameButton {
+  border: 2px solid red;
+  border-radius: 5px;
+  color: white;
+  font-size: small;
+  background-color: cornflowerblue;
+  font-family: 'Rounded Mplus 1c';
+  padding: 5px 20px;
+}
+
+.topLeftButton {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 10;
+  border: 2px solid black;
+  font-size: x-large;
+  font-weight: bolder;
+  border-radius: 5px;
+  color: black;
+  background-color: gold;
+  font-family: 'Rounded Mplus 1c';
+  padding: 10px 15px;
+}
+
+.initialButton {
+  background-color: #3498db;
+  color: white;
+  font-size: medium;
+  border-radius: 25%;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  margin: 0 auto;
+}
+
+.resetButton {
+  background-color: #cf58dc;
+  color: black;
+  font-size: medium;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+} 
+
+.modalWinnersButton {
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background-color: #ffec64;
+  border-radius: 10px;
+  border: 2px solid black;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffee66;
+}

@@ -2,7 +2,8 @@ import React from 'react';
 import AnswerResponseModal from './AnswerResponseModal/AnswerResponseModal';
 import PerfectScoreModal from './PerfectScoreModal/PerfectScoreModal';
 import { ModalWrapperProps } from './Modal.types';
-import './Modal.css';
+// import './Modal.css';
+// import styles from './Modal.module.scss';
 
 
 

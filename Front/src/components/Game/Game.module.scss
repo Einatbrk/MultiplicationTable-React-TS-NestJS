@@ -1,0 +1,29 @@
+// .game-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;  /* Center content vertically */
+//   align-items: center;      /* Center content horizontally */
+//   text-align: center;
+//   width: 100%;
+//   overflow: hidden;
+// }
+// .current-score{
+//   font-family: 'Rounded Mplus 1c';
+//   font-weight: bolder;
+//   font-size: larger;
+// }
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.currentScore {
+  font-family: 'Rounded Mplus 1c';
+  font-weight: bolder;
+  font-size: larger;
+}

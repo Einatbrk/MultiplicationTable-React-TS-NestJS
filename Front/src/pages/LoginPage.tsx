@@ -1,11 +1,12 @@
 import React from 'react';
 import Login from '../components/Login/Login';
-import './LoginPage.css';
+// import './LoginPage.css';
+import styles from '../components/Login/LoginPage.module.scss'
 
 
 const LoginPage: React.FC = () => {
   return (
-    <div className="LoginPage">
+    <div className={styles.LoginPage}>
       <Login />
     </div>
   )

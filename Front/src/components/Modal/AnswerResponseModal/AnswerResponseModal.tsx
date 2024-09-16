@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import {AnswerResponseModalProps} from './AnswerResponseModalProps'
-import '../../Modal/Modal.css';
+// import '../../Modal/Modal.css';
+import styles from '../../Modal/Modal.module.scss'
 import BoyCorrectImg from '/images/correctBoy.jpg';
 import BoyIncorrectImg from '/images/wrongBoy.jpg';
 import GirlCorrectImg from '/images/correctGirl.jpg';
@@ -34,8 +35,12 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
 
     if (isCorrect !== null) {
       return (
-        <div className="modal-content" style={{ backgroundColor }}>
-          <img src={imageUrl} alt={`${gender} ${isCorrect ? 'Correct' : 'Incorrect'}`} className="response-image" />
+        <div className={styles.modalContent} style={{ backgroundColor }}>
+          <img 
+            src={imageUrl}
+            alt={`${gender} ${isCorrect ? 'Correct' : 'Incorrect'}`}
+            className={styles.responseImage}
+            />
           <h2 style={{direction: "rtl" }}>{isCorrect ? 'נכון מאוד!' : 'טעות'}</h2>
           <p>התשובה הנכונה היא: {correctAnswer}.</p>
           <Button onClick={onClose}>סגירה</Button>
@@ -44,11 +49,11 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
     }
     return (
       <>
-        <div className="modal-content" style={{ background: "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)" }}>
+        <div className={styles.modalContent} style={{ background: "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)" }}>
           <p>שאלה:</p>
           <span>{` ${selectedCell.row} x ${selectedCell.col}?`}</span>
           <Input type="number" value={answer} onChange={(e) => setAnswer(e.target.value)} />
-          <div className='answer-questions-buttons-container'>
+          <div className={styles.answerQuestionsButtonsContainer}>
             {isCorrect === null && <Button onClick={handleSubmit}>שלח תשובה</Button>}
             <Button onClick={onClose}>סגירה</Button>
           </div>
@@ -58,10 +63,8 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
   };
       
   return (
-    <div className="modal-backdrop">
-      <div className="modal-backdrop">
+    <div className={styles.modalBackdrop}>
         {getResponseContent()}
-      </div>
     </div>
   );
 };

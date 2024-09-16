@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import WinnersTable from "../components/WinnersTable/WinnersTable";
 import { getTopWinners } from "../utils/winnersTableUtils";
 import { Winner } from "../components/WinnersTable/WinnersTable.types";
+import styles from '../components/WinnersTable/winnersTablePage.module.scss';
 
 
 const WinnersTablePage: React.FC = () => {
@@ -9,7 +10,7 @@ const WinnersTablePage: React.FC = () => {
     const [winners, setWinners] = useState<Winner[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    
+     
     useEffect(() => {
         const fetchWinners = async () => {
             try {
@@ -25,8 +26,8 @@ const WinnersTablePage: React.FC = () => {
         fetchWinners();
     }, []);
     return (
-        <div className="winners-table-container">
-           <div>
+        <div className={styles.winnersTableContainer}>
+           <div className={styles.winnersTableWrapper}>
                <WinnersTable
                 winners={winners}
                 loading={loading}

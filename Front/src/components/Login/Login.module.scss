@@ -1,10 +1,10 @@
 
-.login-container {
+.loginContainer {
   position: relative;
   display: flex;
   direction: rtl;
   justify-content: center;
-  flex-direction:column ;
+  flex-direction: row;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -15,58 +15,67 @@
   overflow: hidden;
 }
 
-.side-image {
+.sideImage {
   position: absolute;
   top: 0;
   width: 15%; 
-  height: 100%; 
-  object-fit: contain; 
+  height: 100%;
+  object-fit: contain;
 }
 
-.side-image.left {
+.sideImageLeft {
   left: 30px;
 }
 
-.side-image.right {
-  right: 30px; 
+.sideImageRight {
+  right: 30px;
 }
 
-.login-content {
-  z-index: 1;
+.loginContent {
   text-align: center;
-  height: 70%; /* Keep the height as it was */
-  width: 40%; /* Adjust the width to make it bigger */
-  max-width: 600px; /* Ensure it doesn't get too large on big screens */
+  height: 90%;
+  width: 70%;
+  margin-bottom: 7%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   font-family: 'Rounded Mplus 1c';
   font-weight: bolder;
   font-size: 18px;
 }
 
-.gender-selection {
+.genderSelection {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
+  padding: 15px;
 }
 
-.login-gender-image {
-  width: 200x;
-  height: 250px;
+.loginGenderImage {
+  width: 100px;
+  height: 150px;
   cursor: pointer;
   transition: border 0.3s ease;
 }
 
-.boy-selected {
-  border: 5px solid blue;
+.boySelected {
+  border: 7px solid blue;
   border-radius: 5px;
 }
 
-.girl-selected {
-  border: 5px solid pink;
+.girlSelected {
+  border: 7px solid pink;
+  border-radius: 5px;
+}
+.loginContent input {
+  margin-top: 10px;
+  font-family: 'Rounded Mplus 1c';
   border-radius: 5px;
 }
 
-
-
+.loginContent label {
+  font-family: 'Rounded Mplus 1c';
+  font-weight: bolder;
+  font-size: 15px;
+}

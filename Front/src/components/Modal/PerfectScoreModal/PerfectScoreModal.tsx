@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../UI/Button/Button';
 import { PerfectScoreModalProps } from './PerfectScoreModalProps.types';
-import '../../Modal/Modal.css';
+// import '../../Modal/Modal.css';
 
 
 
