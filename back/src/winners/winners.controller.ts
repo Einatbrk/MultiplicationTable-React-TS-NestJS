@@ -1,44 +1,30 @@
-// src/winners/winners.controller.ts
-import { Controller, Get, Delete, HttpException, HttpStatus } from '@nestjs/common';
-import * as fs from 'fs';
-import * as path from 'path';
+import { Controller, Get, Delete, HttpCode, HttpStatus } from '@nestjs/common';
+import { WinnersService } from './winners.service';
 
-@Controller('winners') // Ensure this is correct
+@Controller('winners')
 export class WinnersController {
-  private readonly filePath = path.join(__dirname, '../../results.json');
+  constructor(private readonly winnersService: WinnersService) {}
 
-  @Get('top-results') // Ensure this is correct
+  @Get('top-results')
   async getTopResults(): Promise<any> {
     try {
-      if (!fs.existsSync(this.filePath)) {
-        throw new HttpException('No game results found', HttpStatus.NOT_FOUND);
-      }
-
-      const fileData = fs.readFileSync(this.filePath, 'utf-8');
-      const results = JSON.parse(fileData);
-
-      // Sort the results by score in descending order and return the top 3
-      const topResults = results.sort((a: any, b: any) => b.score - a.score).slice(0, 3);
-
+      const topResults = this.winnersService.getTopResults();
       return { topResults };
     } catch (error) {
       console.error('Error retrieving top results:', error);
-      throw new HttpException('Failed to retrieve top results', HttpStatus.INTERNAL_SERVER_ERROR);
+      throw error; // Re-throwing the error so it gets handled by NestJS
     }
   }
 
   @Delete('reset-winners-table')
+  @HttpCode(HttpStatus.OK)  // Return 200 OK explicitly
   async resetWinnersTable(): Promise<any> {
     try {
-      if (!fs.existsSync(this.filePath)) {
-        throw new HttpException('No games results file found', HttpStatus.NOT_FOUND);
-      }
-
-      fs.writeFileSync(this.filePath, '[]');
-      return { message: 'Winners table reset successfully' };
+      this.winnersService.resetWinnersTable();
+      return { message: 'Winners table reset successfully' };  // Return a success message
     } catch (error) {
       console.error('Error resetting winners table:', error);
-      throw new HttpException('Failed to reset winners table', HttpStatus.INTERNAL_SERVER_ERROR);
+      throw error;
     }
   }
 }

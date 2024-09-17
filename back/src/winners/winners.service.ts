@@ -1,4 +1,32 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import * as fs from 'fs';
+import * as path from 'path';
 
 @Injectable()
-export class WinnersService {}
+export class WinnersService {
+  private readonly filePath = path.join(__dirname, '../../results.json');
+
+  // Get top 3 results
+  getTopResults(): any {
+    if (!fs.existsSync(this.filePath)) {
+      throw new HttpException('No game results found', HttpStatus.NOT_FOUND);
+    }
+
+    const fileData = fs.readFileSync(this.filePath, 'utf-8');
+    const results = JSON.parse(fileData);
+
+    // Sort the results by score in descending order and return the top 3
+    const topResults = results.sort((a: any, b: any) => b.score - a.score).slice(0, 3);
+    return topResults;
+  }
+
+  // Reset winners table
+  resetWinnersTable(): void {
+    console.log('reset winners table called')
+    if (!fs.existsSync(this.filePath)) {
+      throw new HttpException('No game results file found', HttpStatus.NOT_FOUND);
+    }
+
+    fs.writeFileSync(this.filePath, '[]'); 
+  }
+}

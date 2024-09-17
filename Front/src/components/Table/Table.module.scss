@@ -33,14 +33,17 @@
 
 .tableCells {
   width: 100%;
+  max-width: 600px; /* Add a max-width to avoid stretching too much */
   border-collapse: collapse;
   margin: 20px 0;
   text-align: center;
+  border: 5px solid rgb(180, 59, 168);
 }
 
 .borderedHeader {
   border: 2px solid black;
   padding: 10px;
+  width: 50px;
 }
 
 .resetButton {
@@ -53,15 +56,11 @@
 }
 
 .answerCells {
-  background-color: transparent;
-  border: none;
-  padding: 0;
+  border: 1px solid rgb(132, 182, 207);
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-} 
+  width: 50px; /* Fixed width for cells */
+  height: 50px; /* Fixed height */
+}
 
 .initialButton {
   background-color: #3498db;

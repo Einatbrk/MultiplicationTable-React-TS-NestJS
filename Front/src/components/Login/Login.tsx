@@ -7,35 +7,32 @@ import { Gender } from './Login.types';
 import BoyImage from '/images/boy.jpg';
 import GirlImage from '/images/girl.jpg';
 import WinnersTable from '../WinnersTable/WinnersTable';
-// import './Login.css';
 import loginStyles from './Login.module.scss';
 import buttonStyles from '../UI/Button/Button.module.scss';
-import inputStyles from '../UI/Input/Input.module.scss';
 
 
 const Login: React.FC = () => {
-  //Player properties
+
   const [playerName, setPlayerName] = useState<string>(''); 
   const [selectedGender, setSelectedGender] = useState<Gender>(null);
   const navigate = useNavigate();
-  //Top 3 Modal
+
   const [showTopWinnersModal, setShowTopWinnersModal] = useState<boolean>(false);
 
-  //Handle Player name input
+
   const handlePlayerNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPlayerName(e.target.value);
   };
-  //Handle gender selection
+
   const onGenderSelect = (gender: 'boy' | 'girl') => {
     setSelectedGender(handleGenderSelect(selectedGender, gender));
   };
-  //Rendering 3 Top players Modal
   const loadWinners = async () => {
-    setShowTopWinnersModal(true); // Open modal
+    setShowTopWinnersModal(true); 
   };
 
   const closeWinnersModal = () => {
-    setShowTopWinnersModal(false); // Close modal
+    setShowTopWinnersModal(false); 
   };
 
   return (
@@ -77,8 +74,6 @@ const Login: React.FC = () => {
         {showTopWinnersModal && (
           <WinnersTable onClose={closeWinnersModal} />  
         )}
-        
-        
       </div>
     </div>
   );

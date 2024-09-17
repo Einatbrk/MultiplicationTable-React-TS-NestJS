@@ -20,10 +20,12 @@
   text-align: center;
   width: 100%;
   overflow: hidden;
+  border: 5px solid blue;
 }
 
 .currentScore {
   font-family: 'Rounded Mplus 1c';
   font-weight: bolder;
   font-size: larger;
+  border: 5px solid red;
 }

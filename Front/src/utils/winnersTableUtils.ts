@@ -6,22 +6,22 @@ export const getTopWinners = async () => {
     const response = await axios.get('http://localhost:3000/winners/top-results');
     if (response.status === 200) {
       console.log('top winners response data from server: ', JSON.stringify(response.data.topResults))
-      return response.data.topResults; // Return the topResults from the response
+      return response.data.topResults;  // Return the topResults from the response
       
     } else {
       throw new Error('Failed to fetch top winners');
     }
   } catch (error) {
     console.error('Error fetching top winners:', error);
-    throw error; // Rethrow error to handle it in the component
+    throw error; 
   } 
 };
 
-export const resetWinnersTable = async () => {
+export const resetWinnersTable = async (password: string) => {
   try {
-    const response = await axios.delete('http://localhost:3000/winners/reset-winners-table');
+    const response = await axios.post('http://localhost:3000/admin/reset-winners', { password });
     if (response.status === 200) {
-      return;
+      return response.data.message;
     } else {
       throw new Error('Failed to reset table');
     }
@@ -30,3 +30,5 @@ export const resetWinnersTable = async () => {
     throw error;
   }
 };
+
+
