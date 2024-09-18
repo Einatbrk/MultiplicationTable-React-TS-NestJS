@@ -1,8 +1,7 @@
 import React from 'react';
 import Table from '../Table';
 import { useGameLogic } from '../../hooks/useGameLogic'; 
-// import './Game.css';
-import styles from './Game.module.scss';
+import styles from '../../styles/components/Game.module.scss';
 import Modal from '../Modal';
 import {GameProps} from './Game.types';
 

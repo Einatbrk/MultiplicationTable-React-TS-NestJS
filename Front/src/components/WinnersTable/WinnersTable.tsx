@@ -4,8 +4,8 @@ import { getTopWinners, resetWinnersTable } from "../../utils/winnersTableUtils"
 import Button from "../UI/Button/Button";
 import { Winner, WinnersTableProps } from "./WinnersTable.types";
 import Podium from '/images/podium.jpg'
-import winnersTableStyles from './WinnersTable.module.scss';
-import buttonStyles from '../UI/Button/Button.module.scss';
+import winnersTableStyles from '../../styles/components/WinnersTable.module.scss';
+import buttonStyles from '../../styles/components/Button.module.scss';
 
 const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
   const [winners, setWinners] = useState<Winner[]>([]);

@@ -89,8 +89,6 @@ export const useGameLogic = () => {
     }
   };
   
-
-  // Function to reset the game
   const handleResetGame = async () => {
     if (window.confirm('Are you sure you want to reset the game?')) {
       await resetGame(gameId); // Pass gameId to reset the game

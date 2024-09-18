@@ -28,8 +28,8 @@
   color: white;
   font-size: medium;
   border-radius: 25%;
-  width: 50px;
-  height: 40px;
+  width: 45px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,12 +38,14 @@
 }
 
 .resetButton {
-  background-color: #cf58dc;
-  color: black;
-  font-size: medium;
-  border-radius: 15px;
-  padding: 10px;
-  cursor: pointer;
+    font-family: 'Rounded Mplus 1c';
+    font-size: small;
+    padding: 10px;
+    background-color: #cf58dc;
+    color: black;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
 } 
 
 .modalWinnersButton {

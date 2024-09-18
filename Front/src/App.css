@@ -1,6 +1,5 @@
 #root {
   width: 100%; /* Set to 100% to fit the viewport */
-  max-width: 100%; /* No max width restriction */
   height: 100vh;
   max-height: 100%;
   margin: 0;

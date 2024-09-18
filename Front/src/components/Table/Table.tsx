@@ -1,8 +1,6 @@
 import React from 'react';
-// import './Table.css';
-import tableStyles from './Table.module.scss';
-import buttonStyles from '../UI/Button/Button.module.scss';
-
+import tableStyles from '../../styles/components/Table.module.scss';
+import buttonStyles from '../../styles/components/Button.module.scss';
 import { TableProps } from './Table.types';
 
 

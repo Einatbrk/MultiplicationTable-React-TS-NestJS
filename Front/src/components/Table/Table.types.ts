@@ -7,5 +7,5 @@ export interface TableProps {
     [key: string]: { isCorrect: boolean | null; content: string };
   };
   gender: string;
-  onResetGame: () => void; // Add reset game function
+  onResetGame: () => void;
 }

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import {AnswerResponseModalProps} from './AnswerResponseModalProps'
-// import '../../Modal/Modal.css';
-import styles from '../../Modal/Modal.module.scss'
+import styles from '../../../styles/components/Modal.module.scss'
 import BoyCorrectImg from '/images/correctBoy.jpg';
 import BoyIncorrectImg from '/images/wrongBoy.jpg';
 import GirlCorrectImg from '/images/correctGirl.jpg';

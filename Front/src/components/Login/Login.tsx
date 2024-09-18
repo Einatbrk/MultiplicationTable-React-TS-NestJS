@@ -7,8 +7,8 @@ import { Gender } from './Login.types';
 import BoyImage from '/images/boy.jpg';
 import GirlImage from '/images/girl.jpg';
 import WinnersTable from '../WinnersTable/WinnersTable';
-import loginStyles from './Login.module.scss';
-import buttonStyles from '../UI/Button/Button.module.scss';
+import loginStyles from '../../styles/components/Login.module.scss';
+import buttonStyles from '../../styles/components/Button.module.scss';
 
 
 const Login: React.FC = () => {

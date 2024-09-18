@@ -1,0 +1,17 @@
+.gameContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  border: 5px solid blue;
+}
+
+.currentScore {
+  font-family: 'Rounded Mplus 1c';
+  font-weight: bolder;
+  font-size: 30px;
+  border: 5px solid red;
+}

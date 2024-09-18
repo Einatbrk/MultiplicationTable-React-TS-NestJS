@@ -1,6 +1,6 @@
-.game-page-container {
+.gamePageContainer {
     background-image: url('/images/tableBackground.jpg');
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-size: contain;
     background-repeat: repeat;
@@ -9,21 +9,27 @@
     flex-direction: column;
     
 }
-.game-component-container{
+.gameContent{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.gameComponent{
     display: flex;
     flex-direction: column;
     justify-content: center;  /* Center content vertically */
     align-items: center;  
 }
 
-.finish-button-container{
+.finishButtonContainer{
     display: flex;
-    justify-content: center;
-    margin: 30px;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
 }
-.finish-button-container button{
+.finishButtonContainer button{
     font-family: 'Rounded Mplus 1c';
-    font-size: large;
+    font-size: medium;
     padding: 15px 20px;
     background-color: #cf58dc;
     color: black;

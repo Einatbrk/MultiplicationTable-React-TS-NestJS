@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from '../components/Login/Login';
 // import './LoginPage.css';
-import styles from '../components/Login/LoginPage.module.scss'
+import styles from '../styles/components/LoginPage.module.scss'
 
 
 const LoginPage: React.FC = () => {
