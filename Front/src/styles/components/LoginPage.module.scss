@@ -4,6 +4,31 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 10px solid violet;
+    border: 10px solid red;  // Initial border color
+    animation: colorfulBorder 3s infinite;  // Duration of 3 seconds, looping infinitely
+    border-radius: 10px; 
+    
   }
-  
+@keyframes colorfulBorder {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: orange;
+  }
+  50% {
+    border-color: yellow;
+  }
+  75% {
+    border-color: green;
+  }
+  100% {
+    border-color: blue;
+  }
+}
+
+.colorfulFrame {
+  border: 10px solid red;  // Initial border color
+  animation: colorfulBorder 3s infinite;  // Duration of 3 seconds, looping infinitely
+  border-radius: 10px; // Optional: to add rounded corners
+}

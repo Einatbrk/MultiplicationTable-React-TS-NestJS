@@ -19,14 +19,16 @@ export const getTopWinners = async () => {
  
 export const resetWinnersTable = async (password: string) => {
   try {
+    console.log('starting resetWinnersTable function');
     const response = await axios.post('http://localhost:3000/admin/reset-winners', { password });
-    if (response.status === 200) {
+    console.log(JSON.stringify(response)); 
+    if (response.status === 201) {
       return response.data.message;
     } else {
       throw new Error('Failed to reset table');
     }
   } catch (error) {
-    console.error('Error resetting winners table:', error);
+    console.error('Error resetting winners table:', (error as any).response?.data || (error as any).message);
     throw error;
   }
 };

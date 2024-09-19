@@ -1,6 +1,7 @@
-import { Controller, Body, Post } from '@nestjs/common';
+import { Controller, Body, Post,HttpException,HttpStatus } from '@nestjs/common';
 import { AdminService } from './admin.service';
 import { WinnersService } from '../winners/winners.service';
+import { STATUS_CODES } from 'http';
 
 @Controller('admin')
 export class AdminController {
@@ -16,15 +17,17 @@ export class AdminController {
 
     if (!isValid) {
       console.log('Password recognized as invalid');
-      throw new Error('Unauthorized');
+      throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);  // Return a proper HTTP status code
     }
 
     console.log('Password recognized as valid');
     try {
-      await this.winnersService.resetWinnersTable(); // Await here
-      return 'Winners table reset successfully';
+      await this.winnersService.resetWinnersTable();  // Ensure we await this
+      console.log('before returning winners table successful reset')
+      return 'Winners table reset successfully';  
     } catch (error) {
-      throw new Error('Failed to reset winners table');
+      console.error('Error resetting winners table:', error);
+      throw new HttpException('Failed to reset winners table', HttpStatus.INTERNAL_SERVER_ERROR);  // Return proper error status
     }
   }
 }
