@@ -15,16 +15,4 @@ export class WinnersController {
       throw error; // Re-throwing the error so it gets handled by NestJS
     }
   }
-
-  @Delete('reset-winners-table')
-  @HttpCode(HttpStatus.OK)  // Return 200 OK explicitly
-  async resetWinnersTable(): Promise<any> {
-    try {
-      this.winnersService.resetWinnersTable();
-      return { message: 'Winners table reset successfully' };  // Return a success message
-    } catch (error) {
-      console.error('Error resetting winners table:', error);
-      throw error;
-    }
-  }
 }

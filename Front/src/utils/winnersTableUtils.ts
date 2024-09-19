@@ -16,7 +16,7 @@ export const getTopWinners = async () => {
     throw error; 
   } 
 };
-
+ 
 export const resetWinnersTable = async (password: string) => {
   try {
     const response = await axios.post('http://localhost:3000/admin/reset-winners', { password });

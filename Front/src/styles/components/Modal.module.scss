@@ -1,84 +1,25 @@
-// .modal-backdrop {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   background: rgba(0, 0, 0, 0.5);
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .modal-content {
-//   padding: 20px;
-//   border-radius: 10px;
-//   text-align: center;
-//   width: 350px;
-//   height: auto;
-//   font-family: 'dida FM';
-//   font-size: large;
-//   font-weight: bold;
-// }
-// .modal-content span{
-//   direction: rtl;
-//   padding: 20px;
-// }
-// .modal-content p{
-//   direction: rtl;
-//   padding: 10px;
-// }
-// .modal-content img{
-//   height: 75%;
-//   width: auto;
-// }
-
-// /* Correct answer styles */
-// .correct {
-//   background-color: green;
-//   color: white;
-// }
-
-// .correct-message {
-//   color: white;
-// }
-
-// /* Incorrect answer styles */
-// .incorrect {
-//   background-color: red;
-//   color: white;
-// }
-
-// .incorrect-message {
-//   color: white;
-// }
-
-// .gender-image {
-//   width: 100px;
-//   height: 100px;
-//   margin-bottom: 10px;
-// }
 .modalBackdrop {
   position: fixed;
   border:20px solid pink;
-  max-width: 200px;
-  max-height: 200px;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  max-width: fit-content;
+  max-height: fit-content;
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure modal is above other content */
+  z-index: 1000; 
 }
-
+.responseContent{
+  font-family:"Rugatka FM";
+}
 .modalContent {
   padding: 20px;
   border:5px solid purple;
   border-radius: 10px;
   text-align: center;
   width: auto;
-  height: 200px;
+  height: 100%;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Dida FM', sans-serif;
@@ -119,23 +60,23 @@ p {
   margin-top: 20px;
 }
  
-button {
-  background-color: #3498db;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+// button {
+//   background-color: #3498db;
+//   color: white;
+//   padding: 10px 20px;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #2980b9;
-  }
+//   &:hover {
+//     background-color: #2980b9;
+//   }
 
-  &:active {
-    background-color: #1f618d;
-  }
-}
+//   &:active {
+//     background-color: #1f618d;
+//   }
+// }
 
 .correct {
   background-color: green;

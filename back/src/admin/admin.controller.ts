@@ -10,17 +10,21 @@ export class AdminController {
   ) {}
 
   @Post('reset-winners')
-  resetWinners(@Body('password') password: string): string {
-    console.log('Post request to reset password with password: ',password)
+  async resetWinners(@Body('password') password: string): Promise<string> {
+    console.log('Post request to reset password with password: ', password);
     const isValid = this.adminService.validatePassword(password);
 
     if (!isValid) {
-      console.log('Password recognized as invalid')
-      return 'Unauthorized';
+      console.log('Password recognized as invalid');
+      throw new Error('Unauthorized');
     }
-    
-    console.log('Password recognized as valid')
-    this.winnersService.resetWinnersTable(); 
-    return 'Winners table reset successfully';
+
+    console.log('Password recognized as valid');
+    try {
+      await this.winnersService.resetWinnersTable(); // Await here
+      return 'Winners table reset successfully';
+    } catch (error) {
+      throw new Error('Failed to reset winners table');
+    }
   }
 }

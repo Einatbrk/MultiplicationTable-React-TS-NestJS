@@ -1,9 +1,8 @@
-// src/components/WinnersTable/WinnersTable.tsx
 import React, { useEffect, useState } from "react";
 import { getTopWinners, resetWinnersTable } from "../../utils/winnersTableUtils";
 import Button from "../UI/Button/Button";
 import { Winner, WinnersTableProps } from "./WinnersTable.types";
-import Podium from '/images/podium.jpg'
+import Podium from '/images/podium.jpg';
 import winnersTableStyles from '../../styles/components/WinnersTable.module.scss';
 import buttonStyles from '../../styles/components/Button.module.scss';
 
@@ -26,26 +25,23 @@ const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
     };
     fetchWinners();
   }, []);
+
   const handleResetWinners = async () => {
-    const inputPassword = prompt("Enter the password to reset the winners table:"); // Prompt for password
+    const inputPassword = prompt("Enter the password to reset the winners table:"); 
     if (!inputPassword) {
       alert("Password is required to reset the table.");
       return;
     }
 
     try {
-      await resetWinnersTable(inputPassword); // Pass the password to resetWinnersTable function
-      setWinners([]); // Clear the winners list after reset
+      await resetWinnersTable(inputPassword); 
+      setWinners([]); 
       alert("Winners table has been reset");
     } catch (error) {
       setError("Failed to reset winners table");
       alert("Invalid password or error in resetting the table.");
     }
   };
-
-  
-  
-  
 
   return (
     <div className={winnersTableStyles.winnersTableContainer}>
@@ -56,13 +52,28 @@ const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
           <p>Loading...</p>
         ) : error ? (
           <p>{error}</p>
-        ) : winners.length > 0 ? (  // Check if there are winners
+        ) : winners.length > 0 ? (
           <div className={winnersTableStyles.podiumContainer}>
             <img src={Podium} alt="Winners Podium" className={winnersTableStyles.podiumImage} />
-            {/* Render winners */}
+            <div className={`${winnersTableStyles.winner} ${winnersTableStyles.firstPlace}`}>
+              <p>{winners[0]?.playerName}</p>
+              <p>{winners[0]?.score}</p>
+            </div>
+            {winners.length > 1 && (
+              <div className={`${winnersTableStyles.winner} ${winnersTableStyles.secondPlace}`}>
+                <p>{winners[1]?.playerName}</p>
+                <p>{winners[1]?.score}</p>
+              </div>
+            )}
+            {winners.length > 2 && (
+              <div className={`${winnersTableStyles.winner} ${winnersTableStyles.thirdPlace}`}>
+                <p>{winners[2]?.playerName}</p>
+                <p>{winners[2]?.score}</p>
+              </div>
+            )}
           </div>
         ) : (
-          <p>No winners yet!</p>  // Show this when the winners array is empty
+          <p>No winners yet!</p>
         )}
   
         <div className={winnersTableStyles.buttonsContainer}>
@@ -76,7 +87,6 @@ const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
       </div>
     </div>
   );
-  
 };
 
 export default WinnersTable;

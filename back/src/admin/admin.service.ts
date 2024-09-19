@@ -1,12 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config'; // Import ConfigService
+import { ConfigService } from '@nestjs/config'; 
 
 @Injectable()
 export class AdminService {
   private readonly resetPassword: string;
 
   constructor(private configService: ConfigService) {
-    // Use ConfigService to load the password from environment variables
     this.resetPassword = this.configService.get<string>('RESET_PASSWORD');
   }
 

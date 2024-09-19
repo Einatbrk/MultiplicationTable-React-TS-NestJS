@@ -21,12 +21,22 @@ export class WinnersService {
   }
 
   // Reset winners table
-  resetWinnersTable(): void {
-    console.log('reset winners table called')
+  async resetWinnersTable(): Promise<void> {
+    console.log('reset winners table called');
     if (!fs.existsSync(this.filePath)) {
       throw new HttpException('No game results file found', HttpStatus.NOT_FOUND);
     }
 
-    fs.writeFileSync(this.filePath, '[]'); 
+    return new Promise<void>((resolve, reject) => {
+      fs.writeFile(this.filePath, '[]', (err) => {
+        if (err) {
+          console.error('Error resetting winners table:', err); // Log error here
+          reject(new HttpException('Failed to reset winners table', HttpStatus.INTERNAL_SERVER_ERROR));
+        } else {
+          console.log('reset winners table finished'); // This should be logged after the file is written
+          resolve();
+        }
+      });
+    });
   }
 }
