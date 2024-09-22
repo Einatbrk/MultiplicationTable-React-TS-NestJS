@@ -1,5 +1,5 @@
 
-.loginContainer {
+.login-container {
   position: relative;
   display: flex;
   direction: rtl;
@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-.sideImage {
+.side-image {
   position: absolute;
   top: 0;
   width: 15%; 
@@ -23,15 +23,15 @@
   object-fit: contain;
 }
 
-.sideImageLeft {
+.side-image-left {
   left: 30px;
 }
 
-.sideImageRight {
+.side-image-right {
   right: 30px;
 }
 
-.loginContent {
+.login-content {
   text-align: center;
   height: 90%;
   width: 70%;
@@ -45,30 +45,30 @@
   font-size: 18px;
 }
 
-.genderSelection {
+.gender-selection {
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 15px;
 }
 
-.loginGenderImage {
+.login-gender-image {
   width: 100px;
   height: 150px;
   cursor: pointer;
   transition: border 0.3s ease;
 }
 
-.boySelected {
+.boy-selected {
   border: 7px solid blue;
   border-radius: 5px;
 }
 
-.girlSelected {
+.girl-selected {
   border: 7px solid pink;
   border-radius: 5px;
 }
-.loginContent input {
+.login-content input {
   margin-top: 10px;
   font-family: 'Rounded Mplus 1c';
   border-radius: 5px;

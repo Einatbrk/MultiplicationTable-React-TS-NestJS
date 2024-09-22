@@ -1,10 +1,10 @@
 import React from "react";
-import styles from '../Modal.module.scss';
+import '../../../styles/components/modal.scss';
 import WinnersTable from "../../WinnersTable/WinnersTable";
 
 const WinnersBoardModal:React.FC = () => {
     return(
-        <div className={styles.modalContent}>
+        <div className="modal-content">
             <WinnersTable />
         </div>
     )

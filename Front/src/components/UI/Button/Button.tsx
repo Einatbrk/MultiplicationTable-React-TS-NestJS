@@ -1,9 +1,9 @@
 import React from 'react';
 import { ButtonProps } from './Button.types';
-import styles from '../../../styles/components/Button.module.scss'
+import '../../../styles/components/button.scss'
 
 const Button: React.FC<ButtonProps> = ({ onClick, children, className }) => {
-  const buttonClass = `${styles.button} ${className ? className : ''}`;
+  const buttonClass = `button ${className ? className : ''}`.trim();
   return <button className={buttonClass} onClick={onClick}>
     {children}</button>;
 };

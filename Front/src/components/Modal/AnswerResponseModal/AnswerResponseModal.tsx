@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import {AnswerResponseModalProps} from './AnswerResponseModalProps'
-import modalStyles from '../../../styles/components/Modal.module.scss'
-import buttonStyles from '../../../styles/components/Button.module.scss';
+import '../../../styles/components/modal.scss'
+import '../../../styles/components/button.scss';
 import BoyCorrectImg from '/images/correctBoy.jpg';
 import BoyIncorrectImg from '/images/wrongBoy.jpg';
 import GirlCorrectImg from '/images/correctGirl.jpg';
@@ -15,9 +15,9 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
   const correctAnswer = selectedCell.row * selectedCell.col;
   const handleSubmit = () => {
     if (parseInt(answer, 10) === correctAnswer) {
-      onCorrectAnswer(true); // Pass `true` for correct answer
+      onCorrectAnswer(true); 
     } else {
-      onCorrectAnswer(false); // Pass `false` for incorrect answer
+      onCorrectAnswer(false); 
     }
   };
 
@@ -35,28 +35,28 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
 
     if (isCorrect !== null) {
       return (
-        <div className={modalStyles.modalContent} style={{ backgroundColor }}>
+        <div className="modal-content" style={{ backgroundColor }}>
           <img 
             src={imageUrl}
             alt={`${gender} ${isCorrect ? 'Correct' : 'Incorrect'}`}
-            className={modalStyles.responseImage}
+            className="response-image"
             />
-          <div className={modalStyles.responseContent}>
+          <div className="response-content">
             <h2 style={{direction: "rtl" }}>{isCorrect ? 'נכון מאוד!' : 'טעות'}</h2>
             <p>התשובה הנכונה היא: {correctAnswer}</p>
           </div>
-          <Button className={buttonStyles.responseContent}onClick={onClose}>סגירה</Button>
+          <Button className="response-content-button" onClick={onClose}>סגירה</Button>
           
         </div>
       );
     }
     return (
       <>
-        <div className={modalStyles.modalContent} style={{ background: "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)" }}>
+        <div className="modal-content" style={{ background: "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)" }}>
           <p>שאלה:</p>
           <span>{` ${selectedCell.row} x ${selectedCell.col}?`}</span>
           <Input type="number" value={answer} onChange={(e) => setAnswer(e.target.value)} />
-          <div className={modalStyles.answerQuestionsButtonsContainer}>
+          <div className="answer-questions-buttons-container">
             {isCorrect === null && <Button onClick={handleSubmit}>שלח תשובה</Button>}
             <Button onClick={onClose}>סגירה</Button>
           </div>
@@ -66,7 +66,7 @@ const AnswerResponseModal: React.FC<AnswerResponseModalProps> = ({ onClose, sele
   };
       
   return (
-    <div className={modalStyles.modalBackdrop}>
+    <div className="modal-backdrop">
         {getResponseContent()}
     </div>
   );

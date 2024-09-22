@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LoginPage, GamePage} from './pages';
 import WinnersTable from './components/WinnersTable/WinnersTable';
 import './styles/global/fonts.scss';
-import styles from './styles/global/reset.module.scss';
+import'./styles/global/reset.scss';
 
 const App: React.FC = () => {
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Router>
         <Routes>
           <Route path="/" element={<LoginPage />} />

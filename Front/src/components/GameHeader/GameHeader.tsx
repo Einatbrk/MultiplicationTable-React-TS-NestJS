@@ -1,11 +1,11 @@
 import { useLocation } from 'react-router-dom';
 import React from 'react';
-import styles from '../../styles/components/GameHeader.module.scss'
+import '../../styles/components/game-header.scss'
 
 const GameHeader: React.FC = () => {
   const location = useLocation();
   const playerName = location.state?.playerName || 'Player';
-  return (<div className={styles.goodLuckNote}>בהצלחה {playerName}</div>)
+  return (<div className="good-luck-note">בהצלחה {playerName}</div>)
 };
 
 export default GameHeader;

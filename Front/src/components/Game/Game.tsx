@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from '../Table';
 import { useGameLogic } from '../../hooks/useGameLogic'; 
-import styles from '../../styles/components/Game.module.scss';
+import '../../styles/components/game.scss';
 import Modal from '../Modal';
 import {GameProps} from './Game.types';
 
@@ -25,8 +25,8 @@ const Game: React.FC<GameProps> = ({ updateScore }) => {
   }, [score, updateScore]);
 
   return (
-    <div className={styles.gameContainer}>
-      <div className={styles.currentScore}>ציון: {score}</div>
+    <div className="game-container">
+      <div className="current-score">ציון: {score}</div>
       <Table onCellClick={handleCellClick} cellStatus={cellStatus} onResetGame={handleResetGame} gender={gender} />
       {showModal && selectedCell && (
         <Modal

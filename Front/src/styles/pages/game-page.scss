@@ -1,4 +1,4 @@
-.gamePageContainer {
+.game-page-container {
     background-image: url('/images/tableBackground.jpg');
     height: 100%;
     width: 100%;
@@ -9,25 +9,25 @@
     flex-direction: column;
     
 }
-.gameContent{
+.game-content{
     display:flex;
     flex-direction: row;
     justify-content: center;
 }
-.gameComponent{
+.game-component{
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Center content vertically */
+    justify-content: center; 
     align-items: center;  
 }
 
-.finishButtonContainer{
+.finish-button-container{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin: 10px;
 }
-.finishButtonContainer button{
+.finish-button-container button{
     font-family: 'Rounded Mplus 1c';
     font-size: medium;
     padding: 15px 20px;

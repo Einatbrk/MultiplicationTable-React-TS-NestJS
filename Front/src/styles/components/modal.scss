@@ -1,4 +1,4 @@
-.modalBackdrop {
+.modal-backdrop {
   position: fixed;
   border:20px solid pink;
   max-width: fit-content;
@@ -10,10 +10,10 @@
   align-items: center;
   z-index: 1000; 
 }
-.responseContent{
+.response-content{
   font-family:"Rugatka FM";
 }
-.modalContent {
+.modal-content {
   padding: 20px;
   border:5px solid purple;
   border-radius: 10px;
@@ -27,12 +27,12 @@
   font-weight: bold;
 }
 
-.modalContent span, .modalContent p {
+.modal-content span, .modal-content p {
   direction: rtl;
   padding: 10px;
 }
 
-.responseImage {
+.response-image {
   width: 150px;
   height: 150px;
   margin-bottom: 20px;
@@ -48,36 +48,18 @@ p {
   color: white;
 }
 
-.genderImage {
+.gender-image {
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
 }
 
-.answerQuestionsButtonsContainer {
+.answer-questions-buttons-container {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
  
-// button {
-//   background-color: #3498db;
-//   color: white;
-//   padding: 10px 20px;
-//   border: none;
-//   border-radius: 5px;
-//   cursor: pointer;
-//   transition: background-color 0.3s ease;
-
-//   &:hover {
-//     background-color: #2980b9;
-//   }
-
-//   &:active {
-//     background-color: #1f618d;
-//   }
-// }
-
 .correct {
   background-color: green;
   color: white;

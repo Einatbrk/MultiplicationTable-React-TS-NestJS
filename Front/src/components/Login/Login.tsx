@@ -7,8 +7,8 @@ import { Gender } from './Login.types';
 import BoyImage from '/images/boy.jpg';
 import GirlImage from '/images/girl.jpg';
 import WinnersTable from '../WinnersTable/WinnersTable';
-import loginStyles from '../../styles/components/Login.module.scss';
-import buttonStyles from '../../styles/components/Button.module.scss';
+import '../../styles/components/login.scss';
+import '../../styles/components/button.scss';
 
 
 const Login: React.FC = () => {
@@ -36,9 +36,9 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className={loginStyles.loginContainer}>
-      <img src="/images/login_boy.jpg" alt="Boy Side" className={`${loginStyles.sideImageLeft} ${loginStyles.sideImage}`} />
-      <div className={loginStyles.loginContent}>
+    <div className="login-container">
+      <img src="/images/login_boy.jpg" alt="Boy Side" className="side-image-left side-image" />
+      <div className="login-content">
         <label>הכנס את שמך</label>
         <Input
           type="text"
@@ -47,30 +47,30 @@ const Login: React.FC = () => {
           placeholder="מה שמך?"
         />
         <h5>אני...</h5>
-        <div className={loginStyles.genderSelection}>
+        <div className="gender-selection">
           <img
             src={BoyImage}
             alt="Boy"
-            className={`${loginStyles.loginGenderImage} ${selectedGender === 'boy' ? loginStyles.boySelected : ''}`}
+            className={`login-gender-image ${selectedGender === 'boy' ? 'boy-selected' : ''}`}
             onClick={() => onGenderSelect('boy')}
           />
           <img
             src={GirlImage}
             alt="Girl"
-            className={`${loginStyles.loginGenderImage} ${selectedGender === 'girl' ? loginStyles.girlSelected : ''}`}
+            className={`login-gender-image ${selectedGender === 'girl' ? 'girl-selected' : ''}`}
             onClick={() => onGenderSelect('girl')}
           />
         </div>
 
-        <div className={buttonStyles.loginButtonsContainer}>
-          <Button className={buttonStyles.startGameButton}
+        <div className="login-buttons-container">
+          <Button className="start-game-button"
             onClick={() => onStartGame(playerName, selectedGender, navigate)}
           >
             בואו נתחיל!
           </Button>
-          <Button className={buttonStyles.topLeftButton} onClick={()=>loadWinners()}>טבלת האלופים</Button>
+          <Button className="top-left-button" onClick={()=>loadWinners()}>טבלת האלופים</Button>
         </div>
-        <img src="/images/login_girl.jpg" alt="Girl Side" className={`${loginStyles.sideImageRight} ${loginStyles.sideImage}`} />
+        <img src="/images/login_girl.jpg" alt="Girl Side" className="side-image-right side-image" />
         {showTopWinnersModal && (
           <WinnersTable onClose={closeWinnersModal} />  
         )}

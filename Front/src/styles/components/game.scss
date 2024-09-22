@@ -1,4 +1,4 @@
-.gameContainer {
+.game-container {
   display: flex;
   flex-direction: row;
   justify-content: center; 
@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-.currentScore {
+.current-score {
   font-family: 'Rounded Mplus 1c';
   font-weight: bolder;
   font-size: 30px;

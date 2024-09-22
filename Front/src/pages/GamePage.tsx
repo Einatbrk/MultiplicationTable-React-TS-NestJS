@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import GameHeader from "../components/GameHeader/GameHeader";
 import Button from "../components/UI/Button/Button";
 import { useGameLogic } from "../hooks/useGameLogic";
-import styles from '../styles/components/GamePage.module.scss';
+import  '../styles/pages/game-page.scss';
 
 const GamePage:React.FC=()=>{
     const { handleFinishGame, playerName, gameId } = useGameLogic();
@@ -13,13 +13,13 @@ const GamePage:React.FC=()=>{
         setScore(newScore);
     };
     return (
-        <div className={styles.gamePageContainer}>
+        <div className="game-page-container">
             <GameHeader />
-            <div className={styles.gameContent}>
-                <div className={styles.gameComponent}>
+            <div className="game-content">
+                <div className="game-component">
                     <Game updateScore={updateScore}/>
                 </div>
-                <div className={styles.finishButtonContainer}>
+                <div className="finish-button-container">
                     <Button onClick={() => handleFinishGame(playerName,score, gameId)}>
                         סיום משחק
                     </Button>
