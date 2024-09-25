@@ -1,4 +1,3 @@
-// src/utils/winnersTableUtils.ts
 import axios from 'axios';
 
 export const getTopWinners = async () => {
@@ -6,7 +5,7 @@ export const getTopWinners = async () => {
     const response = await axios.get('http://localhost:3000/winners/top-results');
     if (response.status === 200) {
       console.log('top winners response data from server: ', JSON.stringify(response.data.topResults))
-      return response.data.topResults;  // Return the topResults from the response
+      return response.data.topResults;  
       
     } else {
       throw new Error('Failed to fetch top winners');

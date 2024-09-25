@@ -2,9 +2,9 @@ import axios from 'axios';
 
 /**
  * Sends the player's name and score to the server for saving.
- * @param playerName The player's name
- * @param score The player's score
- * @param gameId The game's ID
+ * @param playerName 
+ * @param score 
+ * @param gameId 
  */
 export const saveGameResult = async (playerName: string, score: number, gameId: string) => {
   try {
@@ -48,7 +48,7 @@ export const resetGame = async (gameId: string) => {
  * @returns A boolean indicating whether the user confirmed the exit.
  */
 export const confirmExitGame = (): boolean => {
-  return window.confirm('Are you sure you want to quit the game?');
+  return window.confirm('האם לסיים את המשחק?');
 };
 
 

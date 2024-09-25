@@ -9,7 +9,16 @@
   font-family: $primary-font;
   padding: $padding-small $padding-medium;
 }
-
+.close-perfect-score-btn{
+  border: $border-width solid $danger-color;
+  border-radius: $border-radius;
+  background-color: $background-color;
+  padding: $padding-small $padding-medium;
+  color: rgb(67, 207, 209);
+  width: fit-content;
+  font-family: $primary-font;
+  
+}
 .response-content-button {
   background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
   border-radius: $border-radius;

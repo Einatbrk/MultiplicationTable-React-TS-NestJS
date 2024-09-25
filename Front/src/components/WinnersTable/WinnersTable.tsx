@@ -1,16 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { getTopWinners, resetWinnersTable } from "../../utils/winnersTableUtils";
-import Button from "../UI/Button/Button";
-import { Winner, WinnersTableProps } from "./WinnersTable.types";
+import React, { useEffect, useState, useRef } from "react";
+import { getTopWinners, resetWinnersTable } from "../../utils/";
+import {Button} from "../UI/Button/";
+import { Winner, WinnersTableProps } from "./index.ts";
 import Podium from '/images/podium.jpg';
-import '../../styles/components/winners-table.scss';
-import '../../styles/components/button.scss';
+import superhero from '/audio/superhero.mp3';
+import '../../styles/index.scss';
+
 
 const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
   const [winners, setWinners] = useState<Winner[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const superheroAudioRef = useRef<HTMLAudioElement | null>(null);
 
+  useEffect(() => {
+    const playAudio = async () => {
+      if (superheroAudioRef.current) {
+        try {
+          await superheroAudioRef.current.play();
+        } catch (err) {
+          console.log('Autoplay failed: user interaction required');
+        }
+      }
+    };
+    playAudio();
+  }, []);
   useEffect(() => {
     const fetchWinners = async () => {
       try {
@@ -84,6 +98,7 @@ const WinnersTable: React.FC<WinnersTableProps> = ({ onClose = () => {} }) => {
             סגירה
           </Button>
         </div>
+        <audio ref={superheroAudioRef} src={superhero} />
       </div>
     </div>
   );

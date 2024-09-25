@@ -1,9 +1,10 @@
 import React from 'react';
-import Table from '../Table';
-import { useGameLogic } from '../../hooks/useGameLogic'; 
-import '../../styles/components/game.scss';
-import Modal from '../Modal';
-import {GameProps} from './Game.types';
+import { Table } from '../Table';
+import { PerfectScoreModal } from '../Modal/PerfectScoreModal/';
+import { useGameLogic } from '../../hooks/'; 
+import '../../styles/index.scss';
+import { Modal } from '../Modal';
+import { GameProps } from './index.ts';
 
 const Game: React.FC<GameProps> = ({ updateScore }) => {
   const {
@@ -18,8 +19,11 @@ const Game: React.FC<GameProps> = ({ updateScore }) => {
     handleAnswer,
     handleCloseModal,
     handleResetGame,
+    showPerfectScoreModal, 
+    handleClosePerfectScoreModal, 
   } = useGameLogic();
   useGameLogic();
+
   React.useEffect(() => {
     updateScore(score);
   }, [score, updateScore]);
@@ -28,6 +32,7 @@ const Game: React.FC<GameProps> = ({ updateScore }) => {
     <div className="game-container">
       <div className="current-score">ציון: {score}</div>
       <Table onCellClick={handleCellClick} cellStatus={cellStatus} onResetGame={handleResetGame} gender={gender} />
+      
       {showModal && selectedCell && (
         <Modal
           onClose={handleCloseModal}
@@ -35,8 +40,12 @@ const Game: React.FC<GameProps> = ({ updateScore }) => {
           onCorrectAnswer={handleAnswer}
           gender={gender}
           isCorrect={isCorrect}
-          isPerfectScore={isPerfectScore} 
+          isPerfectScore={isPerfectScore}
         />
+      )}
+
+      {showPerfectScoreModal && (
+        <PerfectScoreModal onClose={handleClosePerfectScoreModal} />
       )}
     </div>
   );

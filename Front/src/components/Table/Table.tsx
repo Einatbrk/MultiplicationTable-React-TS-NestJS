@@ -1,7 +1,6 @@
 import React from 'react';
-import '../../styles/components/table.scss';
-import '../../styles/components/button.scss';
-import { TableProps } from './Table.types';
+import '../../styles/index.scss';
+import { TableProps } from './index.ts';
 
 
 const Table: React.FC<TableProps> = ({ onCellClick, cellStatus, onResetGame}) => {

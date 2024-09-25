@@ -1,0 +1,16 @@
+@import '../global/variables.scss';
+.perfect-score-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    color: black;
+    font-family: $primary-font;
+    height: 100%;
+    width: auto;
+}
+.perfect-score-container img {
+    height: 150px;
+    width: auto;
+}

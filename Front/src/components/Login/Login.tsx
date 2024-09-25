@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Input from '../UI/Input/Input';
-import Button from '../UI/Button/Button';
-import { handleGenderSelect, onStartGame } from '../../utils/loginUtils';
-import { Gender } from './Login.types';
+import { Input } from '../UI/Input/';
+import { Button } from '../UI/Button/';
+import { handleGenderSelect, onStartGame } from '../../utils/';
+import { Gender } from './index.ts';
 import BoyImage from '/images/boy.jpg';
 import GirlImage from '/images/girl.jpg';
-import WinnersTable from '../WinnersTable/WinnersTable';
-import '../../styles/components/login.scss';
-import '../../styles/components/button.scss';
+import { WinnersTable } from '../WinnersTable/';
+import '../../styles/index.scss';
 
 
 const Login: React.FC = () => {

@@ -1,9 +1,9 @@
-import Game from "../components/Game";
+import {Game} from "../components/Game";
 import React, { useState } from "react";
-import GameHeader from "../components/GameHeader/GameHeader";
-import Button from "../components/UI/Button/Button";
-import { useGameLogic } from "../hooks/useGameLogic";
-import  '../styles/pages/game-page.scss';
+import {GameHeader} from "../components/GameHeader/";
+import {Button} from "../components/UI/Button/";
+import { useGameLogic } from "../hooks/";
+import  '../styles/index.scss';
 
 const GamePage:React.FC=()=>{
     const { handleFinishGame, playerName, gameId } = useGameLogic();

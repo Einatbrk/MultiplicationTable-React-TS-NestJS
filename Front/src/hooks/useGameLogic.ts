@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { SelectedCell, CellStatus } from '../components/Game/Game.types';
-import { saveGameResult, confirmExitGame, resetGame } from '../utils/gameUtils'; // Import utilities
+import { saveGameResult, confirmExitGame, resetGame } from '../utils/'; // Import utilities
 
 export const useGameLogic = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null);
   const [score, setScore] = useState<number>(0); // Track the player's score
-  const [isCorrect, setIsCorrect] = useState<boolean | null>(null); // Track if the current answer is correct or incorrect
-  const [cellStatus, setCellStatus] = useState<CellStatus>({}); // Track cell content and correctness
-  const [isPerfectScore, setIsPerfectScore] = useState<boolean>(false); // New state for perfect score
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null); 
+  const [cellStatus, setCellStatus] = useState<CellStatus>({}); 
+  const [showPerfectScoreModal, setShowPerfectScoreModal] = useState<boolean>(false);
+  const [isPerfectScore, setIsPerfectScore] = useState<boolean>(false); 
 
   const location = useLocation();
   const playerName = location.state?.playerName; // Get player name from location state
@@ -46,14 +47,19 @@ export const useGameLogic = () => {
         saveGameResult(playerName, newScore, gameId);
         if (newScore === 100) {
           setIsPerfectScore(true);
+          setShowPerfectScoreModal(true); // Trigger the perfect score modal
         }
         return newScore;
       });
     }
-
+  
     updateCellStatus(isCorrectAnswer);
     setIsCorrect(isCorrectAnswer);
     console.log(`handle answer game with score: ${score}`);
+  };
+  const handleClosePerfectScoreModal = () => {
+    setShowPerfectScoreModal(false);
+    navigate('/'); 
   };
 
   const updateCellStatus = (isCorrect: boolean) => {
@@ -111,6 +117,8 @@ export const useGameLogic = () => {
     handleCellClick,
     handleAnswer, 
     handleCloseModal,
+    showPerfectScoreModal,
+    handleClosePerfectScoreModal,
     handleFinishGame,
     handleResetGame,
   };

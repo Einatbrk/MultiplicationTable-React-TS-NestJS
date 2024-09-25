@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LoginPage, GamePage} from './pages';
-import WinnersTable from './components/WinnersTable/WinnersTable';
+import {WinnersTable} from './components/WinnersTable/';
 import './styles/global/fonts.scss';
 import'./styles/global/reset.scss';
 

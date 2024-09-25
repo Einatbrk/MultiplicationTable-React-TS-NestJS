@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import React from 'react';
-import '../../styles/components/game-header.scss'
+import '../../styles/index.scss'
 
 const GameHeader: React.FC = () => {
   const location = useLocation();
