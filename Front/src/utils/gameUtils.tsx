@@ -1,4 +1,5 @@
 import axios from 'axios';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
 
 /**
  * Sends the player's name and score to the server for saving.
@@ -8,7 +9,7 @@ import axios from 'axios';
  */
 export const saveGameResult = async (playerName: string, score: number, gameId: string) => {
   try {
-    const response = await axios.post('http://localhost:3000/game/save', {
+    const response = await axios.post(`${API_BASE_URL}/game/save`, {
       playerName,
       score,
       gameId, 
@@ -30,7 +31,7 @@ export const saveGameResult = async (playerName: string, score: number, gameId: 
  */
 export const resetGame = async (gameId: string) => {
   try {
-    const response = await axios.delete('http://localhost:3000/game/reset-game', {
+    const response = await axios.delete(`${API_BASE_URL}/game/reset-game`, {
       data: { gameId }, 
     });
     if (response.status === 200) {

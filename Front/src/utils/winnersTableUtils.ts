@@ -1,8 +1,8 @@
 import axios from 'axios';
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
 export const getTopWinners = async () => {
   try {
-    const response = await axios.get('http://localhost:3000/winners/top-results');
+    const response = await axios.get(`${API_BASE_URL}/winners/top-results`);
     if (response.status === 200) {
       console.log('top winners response data from server: ', JSON.stringify(response.data.topResults))
       return response.data.topResults;  
@@ -19,7 +19,7 @@ export const getTopWinners = async () => {
 export const resetWinnersTable = async (password: string) => {
   try {
     console.log('starting resetWinnersTable function');
-    const response = await axios.post('http://localhost:3000/admin/reset-winners', { password });
+    const response = await axios.post(`${API_BASE_URL}/admin/reset-winners`, { password });
     console.log(JSON.stringify(response)); 
     if (response.status === 201) {
       return response.data.message;
