@@ -1,0 +1,40 @@
+.game-page-container {
+    background-image: url('/images/tableBackground.jpg');
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+.game-content{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.game-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;  
+}
+
+.finish-button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px;
+}
+.finish-button-container button{
+    font-family: 'Rounded Mplus 1c';
+    font-size: medium;
+    padding: 15px 20px;
+    background-color: #cf58dc;
+    color: black;
+    font-size: medium;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}

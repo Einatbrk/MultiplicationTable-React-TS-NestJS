@@ -1,0 +1,33 @@
+.table-cells {
+  max-width: 600px; 
+  text-align: center;
+  padding-left: 50px;
+}
+
+.bordered-header {
+  color: rgb(55, 98, 112);
+}
+
+.answer-cells {
+  text-align: center;
+  width: 25px; 
+  height: 15px;
+  padding:2px; 
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+
+.incorrect {
+  background-color: red;
+  color: white;
+}
+
+.no-border {
+  border: none;
+  color: rgb(55, 98, 112);
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
