@@ -6,7 +6,7 @@ import './styles/global/fonts.scss';
 import'./styles/global/reset.scss';
 
 const App: React.FC = () => {
-console.log(import.meta.env);
+  console.log(import.meta.env);
   return (
     <div className="container">
       <Router basename={import.meta.env.VITE_PUBLIC_URL}>
