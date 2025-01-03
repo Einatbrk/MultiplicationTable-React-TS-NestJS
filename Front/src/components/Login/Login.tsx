@@ -6,6 +6,8 @@ import { handleGenderSelect, onStartGame } from '../../utils/';
 import { Gender } from './index.ts';
 import BoyImage from '/images/boy.jpg';
 import GirlImage from '/images/girl.jpg';
+import LoginBoyImage from '/images/login_boy.jpg';
+import LoginGirlImage from '/images/login_girl.jpg';
 import { WinnersTable } from '../WinnersTable/';
 import '../../styles/index.scss';
 
@@ -36,7 +38,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <img src="/images/login_boy.jpg" alt="Boy Side" className="side-image-left side-image" />
+      <img src={LoginBoyImage} alt="Boy Side" className="side-image-left side-image" />
       <div className="login-content">
         <label>הכנס את שמך</label>
         <Input
@@ -69,7 +71,7 @@ const Login: React.FC = () => {
           </Button>
           <Button className="top-left-button" onClick={()=>loadWinners()}>טבלת האלופים</Button>
         </div>
-        <img src="/images/login_girl.jpg" alt="Girl Side" className="side-image-right side-image" />
+        <img src={LoginGirlImage} alt="Girl Side" className="side-image-right side-image" />
         {showTopWinnersModal && (
           <WinnersTable onClose={closeWinnersModal} />  
         )}
