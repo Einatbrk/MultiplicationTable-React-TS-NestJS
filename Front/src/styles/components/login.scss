@@ -5,37 +5,36 @@
   direction: rtl;
   justify-content: center;
   flex-direction: row;
-  align-items: center;
+
   height: 100%;
   width: 100%;
   background-image: url('/images/login.jpg');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
-.side-image {
-  position: absolute;
-  top: 0;
-  width: 15%; 
-  height: 100%;
-  object-fit: contain;
-}
+// .side-image {
+//   position: absolute;
+//   top: 0;
+//   width: 15%; 
+//   height: 100%;
+//   object-fit: contain;
+// }
 
-.side-image-left {
-  left: 30px;
-}
+// .side-image-left {
+//   left: 30px;
+// }
 
-.side-image-right {
-  right: 30px;
-}
+// .side-image-right {
+//   right: 30px;
+// }
 
 .login-content {
   text-align: center;
   height: 90%;
   width: 70%;
-  margin-bottom: 4%;
   max-width: 600px;
   display: flex;
   flex-direction: column;

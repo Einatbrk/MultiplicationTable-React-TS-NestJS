@@ -38,7 +38,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <img src={LoginBoyImage} alt="Boy Side" className="side-image-left side-image" />
+      {/* <img src={LoginBoyImage} alt="Boy Side" className="side-image-left side-image" /> */}
       <div className="login-content">
         <label>הכנס את שמך</label>
         <Input
@@ -71,7 +71,7 @@ const Login: React.FC = () => {
           </Button>
           <Button className="top-left-button" onClick={()=>loadWinners()}>טבלת האלופים</Button>
         </div>
-        <img src={LoginGirlImage} alt="Girl Side" className="side-image-right side-image" />
+        {/* <img src={LoginGirlImage} alt="Girl Side" className="side-image-right side-image" /> */}
         {showTopWinnersModal && (
           <WinnersTable onClose={closeWinnersModal} />  
         )}
