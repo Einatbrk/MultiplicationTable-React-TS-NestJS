@@ -58,11 +58,11 @@ import { useGameLogic } from "../../hooks/";
 import "./Game.scss";
 
 const Game: React.FC = () => {
-  const { cellStatus, handleCellClick } = useGameLogic();
+  const { cellStatus, handleCellClick, gender, handleResetGame } = useGameLogic();
 
   return (
     <div className="game-container">
-      <Table onCellClick={handleCellClick} cellStatus={cellStatus} />
+      <Table onCellClick={handleCellClick} cellStatus={cellStatus} gender={gender} onResetGame={handleResetGame} />
     </div>
   );
 };

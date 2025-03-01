@@ -20,6 +20,7 @@
     margin-top: 2vh;
     gap: 2vw; // רווח דינמי בין האלמנטים
 }
+
 .game-component {
     flex: 1;
     display: flex;
@@ -51,22 +52,16 @@
 .controls {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* עכשיו באמת בצד ימין */
-    gap: 1.5vh;
+    align-items: flex-end; /* מיישר את הכפתורים לימין */
+    gap: 10px; /* רווח בין הכפתורים */
   }
   
-.controls button {
-    padding: 1.5vh 2vw;
-    font-size: 2vh;
-    background-color: #d63384;
-    color: white;
-    border: none;
-    border-radius: 1vh;
+  .controls button {
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
-}
-  
+  }
 .controls button:hover {
     background-color: #b91c6b;
 }
-  
+

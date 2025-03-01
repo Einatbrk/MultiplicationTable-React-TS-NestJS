@@ -1,16 +1,13 @@
-
-
 .game-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* רווח קטן בין הכותרת לציון */
+    gap: 10px; /* רווח בין ההודעה לציון */
     margin-bottom: 20px;
-    font-size: 2.5vh;
-};
+  }
   
-.score {
+  .score {
     font-size: 1.2em;
     color: #333;
-    font-weight: bold;
-;}
+  }
+  

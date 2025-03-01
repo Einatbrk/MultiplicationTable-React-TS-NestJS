@@ -1,7 +1,4 @@
 // import { useLocation } from 'react-router-dom';
-
-import '../../styles/index.scss'
-
 // const GameHeader: React.FC = () => {
 //   const location = useLocation();
 //   const playerName = location.state?.playerName || 'Player';
@@ -9,9 +6,9 @@ import '../../styles/index.scss'
 // };
 
 // export default GameHeader;
-
-
+import '../../styles/index.scss'
 import { GameHeaderProps } from './GameHeader.types';
+
 const GameHeader: React.FC<GameHeaderProps> = ({ playerName, score }) => {
   return (
     <div className="game-header">
