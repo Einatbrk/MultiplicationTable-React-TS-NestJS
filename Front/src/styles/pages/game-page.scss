@@ -48,3 +48,25 @@
 .finish-button-container button:hover {
     background-color: #b91c6b;
 }
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* עכשיו באמת בצד ימין */
+    gap: 1.5vh;
+  }
+  
+.controls button {
+    padding: 1.5vh 2vw;
+    font-size: 2vh;
+    background-color: #d63384;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.controls button:hover {
+    background-color: #b91c6b;
+}
+  

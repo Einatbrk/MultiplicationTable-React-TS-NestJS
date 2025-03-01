@@ -1,7 +1,16 @@
 
-.good-luck-note  {
-    text-align: center;
-    font-size: 5vh; // גדל/קטן בהתאם למסך
+
+.game-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* רווח קטן בין הכותרת לציון */
+    margin-bottom: 20px;
+    font-size: 2.5vh;
+};
+  
+.score {
+    font-size: 1.2em;
+    color: #333;
     font-weight: bold;
-    margin-bottom: 2vh;
-  }
+;}

@@ -1,32 +1,59 @@
-import {Game} from "../components/Game";
-import React, { useState } from "react";
-import {GameHeader} from "../components/GameHeader/";
-import {Button} from "../components/UI/Button/";
-import { useGameLogic } from "../hooks/";
-import  '../styles/index.scss';
+// import {Game} from "../components/Game";
+// import React, { useState } from "react";
+// import {GameHeader} from "../components/GameHeader/";
+// import {Button} from "../components/UI/Button/";
+// import { useGameLogic } from "../hooks/";
+// import  '../styles/index.scss';
 
-const GamePage:React.FC=()=>{
-    const { handleFinishGame, playerName, gameId } = useGameLogic();
-    useGameLogic();
-    const [score, setScore] = useState<number>(0);
-    const updateScore = (newScore: number) => {
-        setScore(newScore);
-    };
-    return (
-        <div className="game-page-container">
-            <GameHeader />
-            <div className="game-content">
-                <div className="game-component">
-                    <Game updateScore={updateScore}/>
-                </div>
-                <div className="finish-button-container">
-                    <Button onClick={() => handleFinishGame(playerName,score, gameId)}>
-                        סיום משחק
-                    </Button>
-                </div>
-            </div>
+// const GamePage:React.FC=()=>{
+//     const { handleFinishGame, playerName, gameId } = useGameLogic();
+//     useGameLogic();
+//     const [score, setScore] = useState<number>(0);
+//     const updateScore = (newScore: number) => {
+//         setScore(newScore);
+//     };
+//     return (
+//         <div className="game-page-container">
+//             <GameHeader playerName={playerName} score={score}/>
+//             <div className="game-content">
+//                 <div className="game-component">
+//                     <Game updateScore={updateScore}/>
+//                 </div>
+//                 <div className="finish-button-container">
+//                     <Button onClick={() => handleFinishGame(playerName,score, gameId)}>
+//                         סיום משחק
+//                     </Button>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default GamePage;
+import React from "react";
+import { Game } from "../components/Game";
+import { GameHeader } from "../components/GameHeader/";
+import { Button } from "../components/UI/Button/";
+import { useGameLogic } from "../hooks/";
+import "../styles/index.scss";
+
+const GamePage: React.FC = () => {
+  const { handleFinishGame, playerName, gameId, score, handleResetGame } = useGameLogic();
+
+  return (
+    <div className="game-page-container">
+      <GameHeader playerName={playerName} score={score} />
+      <div className="game-content">
+        <div className="game-component">
+          <Game /> {/* נשאר **בדיוק** כמו שכתבת – בלי נגיעות מיותרות */}
         </div>
-    )
-}
+        <div className="controls">
+          <Button onClick={handleResetGame}>משחק חדש</Button>
+          <Button onClick={() => handleFinishGame(playerName, score, gameId)}>סיום משחק</Button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default GamePage;
