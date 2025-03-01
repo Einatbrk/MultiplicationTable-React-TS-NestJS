@@ -1,8 +1,7 @@
-.good-luck-note {
-    justify-content: center;
-    font-family: 'Rounded Mplus 1c';
-    font-weight: bolder;
-    font-size: 50px;
-    display: flex;
-}
-  
+
+.good-luck-note  {
+    text-align: center;
+    font-size: 5vh; // גדל/קטן בהתאם למסך
+    font-weight: bold;
+    margin-bottom: 2vh;
+  }

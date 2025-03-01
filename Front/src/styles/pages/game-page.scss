@@ -1,40 +1,50 @@
 .game-page-container {
-    background-image: url('/images/gameBackground.jpg');
-    background-size: 100% 100%; /* מתאים את התמונה בדיוק למסך */
-    background-repeat: no-repeat; /* מונע חזרות */
-    background-position: center;
-    background-attachment: fixed; /* מאפשר גלילה בלי שהתמונה תזוז */
-    height: 100vh; /* מתאים לגובה של המסך הפתוח */
-    width: 100vw; /* מתאים לרוחב של המסך הפתוח */
     display: flex;
     flex-direction: column;
-}
-.game-content{
-    display:flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-}
-.game-component{
+    background-image: url('/images/gameBackground.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 2vh;
+  }
+.game-content {
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;  
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 80vw; // מתאים את עצמו למסכים גדולים וקטנים
+    margin-top: 2vh;
+    gap: 2vw; // רווח דינמי בין האלמנטים
+}
+.game-component {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.finish-button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20vw;
+    max-width: 200px;
 }
 
-.finish-button-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 10px;
-}
-.finish-button-container button{
-    font-family: 'Rounded Mplus 1c';
-    font-size: medium;
-    padding: 15px 20px;
-    background-color: #cf58dc;
-    color: black;
-    font-size: medium;
-    border-radius: 15px;
-    padding: 10px;
+
+.finish-button-container button {
+    padding: 1.5vh 2vw;
+    font-size: 2vh;
+    background-color: #d63384;
+    color: white;
+    border: none;
+    border-radius: 1vh;
     cursor: pointer;
+    transition: 0.3s;
+}
+.finish-button-container button:hover {
+    background-color: #b91c6b;
 }
