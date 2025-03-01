@@ -13,11 +13,14 @@ export const useGameLogic = () => {
   const [isPerfectScore, setIsPerfectScore] = useState<boolean>(false); 
 
   const location = useLocation();
-  const playerName = location.state?.playerName; // Get player name from location state
-  const gender = location.state?.gender; // Get gender from location state
-  const gameId = location.state?.gameId || ''; // Retrieve gameId from location state
+  const playerName = location.state?.playerName; 
+  const gender = location.state?.gender; 
+  const gameId = location.state?.gameId || ''; 
   const navigate = useNavigate();
-
+  console.log("useGameLogic - Gender from location:", location.state?.gender);
+  const handleUpdateScore = (newScore: number) => {
+     return newScore;
+  };
   const handleCellClick = (row: number, col: number) => {
     console.log('useGameLogic- starting handleCellClick');
     const key = `${row}-${col}`;
@@ -117,6 +120,7 @@ export const useGameLogic = () => {
     handleCellClick,
     handleAnswer, 
     handleCloseModal,
+    handleUpdateScore,
     showPerfectScoreModal,
     handleClosePerfectScoreModal,
     handleFinishGame,

@@ -66,16 +66,37 @@ import React from 'react';
 import { GameHeader } from '../components/GameHeader';
 import { Game } from '../components/Game';
 import { useGameLogic } from '../hooks/useGameLogic';
-import './GamePage.scss';
+// import './GamePage.scss';
 
+// const GamePage: React.FC = () => {
+//   const { playerName, score, gameId, handleFinishGame, handleResetGame } = useGameLogic();
+
+//   return (
+//     <div className="game-page-container">
+//       <GameHeader playerName={playerName} score={score} />
+//       <div className="game-content">
+//         <Game />
+//         <div className="controls">
+//           <button onClick={handleResetGame}>משחק חדש</button>
+//           <button onClick={() => handleFinishGame(playerName, score, gameId)}>סיום משחק</button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default GamePage;
+
+
+//version 4:
 const GamePage: React.FC = () => {
-  const { playerName, score, gameId, handleFinishGame, handleResetGame } = useGameLogic();
-
+  const { playerName, score, gameId, handleFinishGame, handleResetGame, handleUpdateScore } = useGameLogic();
+  useGameLogic()
   return (
     <div className="game-page-container">
       <GameHeader playerName={playerName} score={score} />
       <div className="game-content">
-        <Game />
+        <Game updateScore={handleUpdateScore}/>
         <div className="controls">
           <button onClick={handleResetGame}>משחק חדש</button>
           <button onClick={() => handleFinishGame(playerName, score, gameId)}>סיום משחק</button>
@@ -84,5 +105,4 @@ const GamePage: React.FC = () => {
     </div>
   );
 };
-
 export default GamePage;

@@ -52,14 +52,18 @@
 .controls {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* מיישר את הכפתורים לימין */
-    gap: 10px; /* רווח בין הכפתורים */
+    align-items: center;
+    gap: 1.5rem; // רווחים יחסיים לגודל הפונט
+    width: 100%; // לוודא התאמה מלאה לכל רוחב
+    max-width: 20rem; // שלא יהיו מפלצות בגודל
+    margin-top: 2vh; // טיפה אוויר מעל
   }
   
-  .controls button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.controls button {
+    width: 100%; // יתאימו עצמם לרוחב ההורה
+    padding: 1em; // רווח פנימי שיתאים לכל מסך
+    font-size: 1.2rem; // גודל קריא בלי תלות בפיקסלים
+    border-radius: 0.5em; // מראה יותר מודרני
   }
 .controls button:hover {
     background-color: #b91c6b;
