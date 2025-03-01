@@ -1,12 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+/* eslint-disable prettier/prettier */
+import { Controller, Get, Query } from '@nestjs/common';
 
-@Controller()
+@Controller('multiplication')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getMultiplicationTable(@Query('number') num: number) {
+    if (!num) return { error: 'Number is required' };
+
+    const results = Array.from({ length: 10 }, (_, i) => ({
+      factor: i + 1,
+      result: num * (i + 1),
+    }));
+
+    return { number: num, results };
   }
 }

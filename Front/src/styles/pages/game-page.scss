@@ -1,13 +1,13 @@
 .game-page-container {
-    background-image: url('/images/tableBackground.jpg');
-    height: 100%;
-    width: 100%;
-    background-size: contain;
-    background-repeat: repeat;
+    background-image: url('/images/gameBackground.jpg');
+    background-size: 100% 100%; /* מתאים את התמונה בדיוק למסך */
+    background-repeat: no-repeat; /* מונע חזרות */
     background-position: center;
+    background-attachment: fixed; /* מאפשר גלילה בלי שהתמונה תזוז */
+    height: 100vh; /* מתאים לגובה של המסך הפתוח */
+    width: 100vw; /* מתאים לרוחב של המסך הפתוח */
     display: flex;
     flex-direction: column;
-    
 }
 .game-content{
     display:flex;
