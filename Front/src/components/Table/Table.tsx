@@ -2,8 +2,7 @@ import '../../styles/index.scss';
 import { TableProps } from './index.ts';
 
 
-const Table: React.FC<TableProps> = ({ onCellClick, cellStatus, gender }) => {
-  console.log (`Table component is rendered. Gender: ${gender} `);
+const Table: React.FC<TableProps> = ({ onCellClick, cellStatus }) => {
   return (
     <div className="table-container">
       <div className="table-wrapper">

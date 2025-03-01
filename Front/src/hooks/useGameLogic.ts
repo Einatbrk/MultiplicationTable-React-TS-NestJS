@@ -17,10 +17,7 @@ export const useGameLogic = () => {
   const gender = location.state?.gender; 
   const gameId = location.state?.gameId || ''; 
   const navigate = useNavigate();
-  console.log("useGameLogic - Gender from location:", location.state?.gender);
-  const handleUpdateScore = (newScore: number) => {
-     return newScore;
-  };
+
   const handleCellClick = (row: number, col: number) => {
     console.log('useGameLogic- starting handleCellClick');
     const key = `${row}-${col}`;
@@ -44,21 +41,23 @@ export const useGameLogic = () => {
   };
 
   const handleAnswer = (isCorrectAnswer: boolean) => {
-    if (isCorrectAnswer) {
-      setScore((prevScore) => {
-        const newScore = prevScore + 1;
-        saveGameResult(playerName, newScore, gameId);
-        if (newScore === 100) {
-          setIsPerfectScore(true);
-          setShowPerfectScoreModal(true); // Trigger the perfect score modal
-        }
-        return newScore;
-      });
-    }
+    setScore((prevScore) => {
+      const newScore = prevScore + (isCorrectAnswer ? 1 : 0);
+  
+      console.log(`handleAnswer - Updated score: ${newScore}`);
+  
+      saveGameResult(playerName, newScore, gameId); 
+  
+      if (newScore === 100) {
+        setIsPerfectScore(true);
+        setShowPerfectScoreModal(true);
+      }
+  
+      return newScore;
+    });
   
     updateCellStatus(isCorrectAnswer);
     setIsCorrect(isCorrectAnswer);
-    console.log(`handle answer game with score: ${score}`);
   };
   const handleClosePerfectScoreModal = () => {
     setShowPerfectScoreModal(false);
@@ -84,7 +83,7 @@ export const useGameLogic = () => {
   };
 
   const handleFinishGame = async (playerName: string, score: number,gameId: string,) => {
-    console.log(`Exiting game for player ${playerName} with final score: ${score}, gameId: ${gameId}`);
+    console.log(`handle finish game Exiting game for player ${playerName} with final score: ${score}, gameId: ${gameId}`);
     if (confirmExitGame()) {
       console.log(`Exiting game for player ${playerName} with final score: ${score}, gameId: ${gameId}`);
 
@@ -98,8 +97,9 @@ export const useGameLogic = () => {
     }
   };
   
+  
   const handleResetGame = async () => {
-    if (window.confirm('Are you sure you want to reset the game?')) {
+    if (window.confirm('לאפס את המשחק? הציון הנוכחי לא יישמר')) {
       await resetGame(gameId); // Pass gameId to reset the game
       setScore(0); // Reset score
       setCellStatus({}); // Clear the cell status
@@ -120,7 +120,6 @@ export const useGameLogic = () => {
     handleCellClick,
     handleAnswer, 
     handleCloseModal,
-    handleUpdateScore,
     showPerfectScoreModal,
     handleClosePerfectScoreModal,
     handleFinishGame,

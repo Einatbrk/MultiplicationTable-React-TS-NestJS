@@ -1,6 +1,3 @@
-// import {useGameLogic} from '../../hooks/';
-
-// useGameLogic();
 export interface TableProps {
   onCellClick: (row: number, col: number) => void;
   cellStatus: {

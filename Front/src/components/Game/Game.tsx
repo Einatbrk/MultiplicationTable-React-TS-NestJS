@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
 import { Table } from "../Table";
 import { PerfectScoreModal } from "../Modal/PerfectScoreModal";
 import { useGameLogic } from "../../hooks/";
 import { Modal } from "../Modal";
 import { GameProps } from "./index.ts";
 
-const Game: React.FC<GameProps> = ({ updateScore }) => {
+const Game: React.FC<GameProps> = () => {
   const {
     showModal,
     selectedCell,
@@ -21,13 +20,6 @@ const Game: React.FC<GameProps> = ({ updateScore }) => {
     showPerfectScoreModal,
     handleClosePerfectScoreModal,
   } = useGameLogic();
-
-  console.log(`Game component is rendered. Gender: ${gender}`);
-
-
-  useEffect(() => {
-    updateScore(score);
-  }, [score, updateScore]);
 
   return (
     <div className="game-container">

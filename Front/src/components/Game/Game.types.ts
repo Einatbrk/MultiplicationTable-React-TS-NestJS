@@ -5,6 +5,6 @@ export interface SelectedCell {
 export interface CellStatus {
   [key: string]: { isCorrect: boolean | null; content: string };
 }
-export interface GameProps {
-  updateScore: (newScore: number) => void; 
-}
+// export interface GameProps {
+//   updateScore: (newScore: number) => void; 
+// }

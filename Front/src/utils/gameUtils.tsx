@@ -4,11 +4,13 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 /**
  * Sends the player's name and score to the server for saving.
  * @param playerName 
- * @param score 
+ * @param core 
  * @param gameId 
  */
 export const saveGameResult = async (playerName: string, score: number, gameId: string) => {
+  
   try {
+    console.log(`Saving game result for player ${playerName} with score: ${score}`);
     const response = await axios.post(`${API_BASE_URL}/game/save`, {
       playerName,
       score,
