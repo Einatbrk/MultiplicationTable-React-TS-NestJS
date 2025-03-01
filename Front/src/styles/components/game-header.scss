@@ -1,13 +1,5 @@
 .game-header {
-    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* רווח בין ההודעה לציון */
-    margin-bottom: 20px;
+    direction: rtl;
   }
-  
-  .score {
-    font-size: 1.2em;
-    color: #333;
-  }
-  

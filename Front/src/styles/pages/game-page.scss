@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-image: url('/images/gameBackground.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -10,6 +10,7 @@
     min-height: 100vh;
     width: 100vw;
     padding: 2vh;
+    font-family: 'Rounded Mplus 1c';
   }
 .game-content {
     display: flex;
@@ -17,16 +18,10 @@
     align-items: flex-start;
     width: 90%;
     max-width: 80vw; // מתאים את עצמו למסכים גדולים וקטנים
-    margin-top: 2vh;
+    margin-top: 1vh;
     gap: 2vw; // רווח דינמי בין האלמנטים
 }
 
-.game-component {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .finish-button-container {
     display: flex;
     justify-content: flex-end;
@@ -56,10 +51,11 @@
     gap: 1.5rem; // רווחים יחסיים לגודל הפונט
     width: 100%; // לוודא התאמה מלאה לכל רוחב
     max-width: 20rem; // שלא יהיו מפלצות בגודל
-    margin-top: 2vh; // טיפה אוויר מעל
+    margin-top: 8vh; // טיפה אוויר מעל
   }
   
 .controls button {
+    font-family: 'Rounded Mplus 1c';
     width: 100%; // יתאימו עצמם לרוחב ההורה
     padding: 1em; // רווח פנימי שיתאים לכל מסך
     font-size: 1.2rem; // גודל קריא בלי תלות בפיקסלים
