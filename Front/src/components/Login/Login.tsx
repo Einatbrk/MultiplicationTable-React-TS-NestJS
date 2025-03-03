@@ -38,14 +38,14 @@ const Login: React.FC = () => {
   return (
     <div className="login-container">
       <div className="login-content">
-        <label>הכנס את שמך</label>
+        <h2>הכנס את שמך</h2>
         <Input
           type="text"
           value={playerName}
           onChange={handlePlayerNameChange}
           placeholder="מה שמך?"
         />
-        <h5>אני...</h5>
+        <h2>אני...</h2>
         <div className="gender-selection">
           <img
             src={LoginBoy}
