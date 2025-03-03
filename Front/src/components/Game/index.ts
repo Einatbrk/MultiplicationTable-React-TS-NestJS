@@ -1,2 +1,2 @@
 export { default as Game} from './Game';
-export type { SelectedCell, CellStatus, GameProps } from './Game.types.ts';
+export type { SelectedCell, CellStatus } from './Game.types.ts';

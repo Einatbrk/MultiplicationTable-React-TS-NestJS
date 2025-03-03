@@ -1,9 +1,9 @@
 import { Table } from "../Table";
 import { useGameLogic } from "../../hooks/";
 import { Modal } from "../Modal";
-import { GameProps } from "./index.ts";
 
-const Game: React.FC<GameProps> = () => {
+
+const Game: React.FC = () => {
   const {
     showModal,
     selectedCell,
