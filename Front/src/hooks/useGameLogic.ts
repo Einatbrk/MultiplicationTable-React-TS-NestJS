@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { SelectedCell, CellStatus } from '../components/Game/Game.types';
+import  {useGameStore} from '../store'
 import { saveGameResult, confirmExitGame, resetGame } from '../utils/'; // Import utilities
 
 export const useGameLogic = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null);
-  const [score, setScore] = useState<number>(0); // Track the player's score
+  const { score, setScore } = useGameStore();
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null); 
   const [cellStatus, setCellStatus] = useState<CellStatus>({}); 
   const [showPerfectScoreModal, setShowPerfectScoreModal] = useState<boolean>(false);
@@ -22,7 +23,7 @@ export const useGameLogic = () => {
     console.log('useGameLogic- starting handleCellClick');
     const key = `${row}-${col}`;
 
-    // Check if the cell was already answered
+
     const userAnswer = cellStatus[key];
 
     if (userAnswer && userAnswer.isCorrect !== null) {
@@ -40,28 +41,45 @@ export const useGameLogic = () => {
     }
   };
 
-  const handleAnswer = (isCorrectAnswer: boolean) => {
-    setScore((prevScore) => {
-      const newScore = prevScore + (isCorrectAnswer ? 1 : 0);
+  // const handleAnswer = (isCorrectAnswer: boolean) => {
+  //   setScore((prevScore) => {
+  //     const newScore = prevScore + (isCorrectAnswer ? 1 : 0);
   
-      console.log(`handleAnswer - Updated score: ${newScore}`);
+  //     console.log(`handleAnswer - Updated score: ${newScore}`);
   
-      saveGameResult(playerName, newScore, gameId); 
+  //     saveGameResult(playerName, newScore, gameId); 
   
-      if (newScore === 100) {
-        setIsPerfectScore(true);
-        setShowPerfectScoreModal(true);
-      }
+  //     if (newScore === 100) {
+  //       setIsPerfectScore(true);
+  //       setShowPerfectScoreModal(true);
+  //     }
   
-      return newScore;
-    });
+  //     return newScore;
+  //   });
   
-    updateCellStatus(isCorrectAnswer);
-    setIsCorrect(isCorrectAnswer);
-  };
+  //   updateCellStatus(isCorrectAnswer);
+  //   setIsCorrect(isCorrectAnswer);
+  // };
   const handleClosePerfectScoreModal = () => {
     setShowPerfectScoreModal(false);
     navigate('/'); 
+  };
+  const handleAnswer = (isCorrectAnswer: boolean) => {
+    const newScore = score + (isCorrectAnswer ? 1 : 0);
+  
+    console.log(`handleAnswer - Updated score: ${newScore}`);
+  
+    setScore(newScore); // ✅ עדכון תקין לפי Zustand
+  
+    saveGameResult(playerName, newScore, gameId);
+  
+    if (newScore === 100) {
+      setIsPerfectScore(true);
+      setShowPerfectScoreModal(true);
+    }
+  
+    updateCellStatus(isCorrectAnswer);
+    setIsCorrect(isCorrectAnswer);
   };
 
   const updateCellStatus = (isCorrect: boolean) => {
@@ -82,28 +100,24 @@ export const useGameLogic = () => {
     setSelectedCell(null);
   };
 
-  const handleFinishGame = async (playerName: string, score: number,gameId: string,) => {
-    console.log(`handle finish game Exiting game for player ${playerName} with final score: ${score}, gameId: ${gameId}`);
+  const handleFinishGame = async (playerName:string, score: number, gameId: string) => {
+    console.log(`Finishing game for ${playerName} with final score:`, score);
+  
     if (confirmExitGame()) {
-      console.log(`Exiting game for player ${playerName} with final score: ${score}, gameId: ${gameId}`);
-
-      if (score === 0) {
-        console.warn('Score is 0 on exit. Ensure this is expected.');
-      }
-      
-      // Save the game result with the correct score
-      await saveGameResult(playerName, score, gameId); // Pass the correct score
-      navigate('/'); // Redirect after saving
+      const finalScore = score; 
+      await saveGameResult(playerName, finalScore, gameId);
+      navigate('/'); 
     }
   };
   
   
+  
   const handleResetGame = async () => {
     if (window.confirm('לאפס את המשחק? הציון הנוכחי לא יישמר')) {
-      await resetGame(gameId); // Pass gameId to reset the game
-      setScore(0); // Reset score
-      setCellStatus({}); // Clear the cell status
-      navigate(0); // Force page reload to reset game state
+      await resetGame(gameId);
+      setScore(0); 
+      setCellStatus({}); 
+      navigate(0); 
     }
   };
 

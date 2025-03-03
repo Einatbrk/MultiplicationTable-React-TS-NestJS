@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../../styles/index.scss';
 import { WinnersTable } from "../../WinnersTable/";
 

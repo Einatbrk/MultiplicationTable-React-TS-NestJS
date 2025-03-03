@@ -3,9 +3,8 @@
 .start-game-button {
   border: $border-width solid $danger-color;
   border-radius: $border-radius;
-  color: white;
   font-size: $font-size-small;
-  background-color: $primary-color;
+  background-color: $background-color;
   font-family: $primary-font;
   padding: $padding-small $padding-medium;
 }

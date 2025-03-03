@@ -1,14 +1,10 @@
-import React from 'react';
 import { AnswerResponseModal } from './AnswerResponseModal/';
-import { PerfectScoreModal } from './PerfectScoreModal';
 import { ModalWrapperProps } from './Modal.types';
 
 
 
-const Modal: React.FC<ModalWrapperProps> = ({ onClose, selectedCell, onCorrectAnswer, isPerfectScore, isCorrect, gender }) => {
-  if (isPerfectScore) {
-    return <PerfectScoreModal onClose={onClose} />;
-  }
+const Modal: React.FC<ModalWrapperProps> = ({ onClose, selectedCell, onCorrectAnswer, isCorrect, gender }) => {
+
 
   return (
     <AnswerResponseModal

@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '../UI/Input/';
 import { Button } from '../UI/Button/';
 import { handleGenderSelect, onStartGame } from '../../utils/';
 import { Gender } from './index.ts';
-import BoyImage from '/images/boy.jpg';
-import GirlImage from '/images/girl.jpg';
-import LoginBoyImage from '/images/login_boy.jpg';
-import LoginGirlImage from '/images/login_girl.jpg';
+
+import LoginGirl from '/images/loginGirl.svg';
+import LoginBoy from '/images/loginBoy.png';
 import { WinnersTable } from '../WinnersTable/';
 import '../../styles/index.scss';
 
@@ -38,7 +37,6 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      {/* <img src={LoginBoyImage} alt="Boy Side" className="side-image-left side-image" /> */}
       <div className="login-content">
         <label>הכנס את שמך</label>
         <Input
@@ -50,13 +48,13 @@ const Login: React.FC = () => {
         <h5>אני...</h5>
         <div className="gender-selection">
           <img
-            src={BoyImage}
+            src={LoginBoy}
             alt="Boy"
             className={`login-gender-image ${selectedGender === 'boy' ? 'boy-selected' : ''}`}
             onClick={() => onGenderSelect('boy')}
           />
           <img
-            src={GirlImage}
+            src={LoginGirl}
             alt="Girl"
             className={`login-gender-image ${selectedGender === 'girl' ? 'girl-selected' : ''}`}
             onClick={() => onGenderSelect('girl')}
@@ -71,7 +69,6 @@ const Login: React.FC = () => {
           </Button>
           <Button className="top-left-button" onClick={()=>loadWinners()}>טבלת האלופים</Button>
         </div>
-        {/* <img src={LoginGirlImage} alt="Girl Side" className="side-image-right side-image" /> */}
         {showTopWinnersModal && (
           <WinnersTable onClose={closeWinnersModal} />  
         )}

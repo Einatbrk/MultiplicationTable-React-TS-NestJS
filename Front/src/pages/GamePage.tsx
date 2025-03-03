@@ -1,10 +1,11 @@
-import React from 'react';
 import { GameHeader } from '../components/GameHeader';
 import { Game } from '../components/Game';
 import { useGameLogic } from '../hooks/useGameLogic';
+import {useGameStore} from '../store';
 
 const GamePage: React.FC = () => {
-  const { playerName, score, gameId, handleFinishGame, handleResetGame } = useGameLogic();
+  const { playerName, gameId, handleFinishGame, handleResetGame } = useGameLogic();
+  const { score } = useGameStore();
   return (
     <div className="game-page-container">
       <GameHeader playerName={playerName}/>
