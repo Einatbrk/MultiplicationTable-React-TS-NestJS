@@ -7,9 +7,9 @@ import helmet from "helmet";
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.enableCors(); // ✅ מאפשר חיבור רספונסיבי בין ה-Frontend ל-Backend
-  app.use(compression()); // ✅ דוחס נתונים כדי לשפר ביצועים
-  app.use(helmet()); // ✅ מוסיף אבטחה בסיסית
+  app.enableCors(); 
+  app.use(compression()); 
+  app.use(helmet()); 
 
   await app.listen(3001);
   console.log("🚀 Server is running on http://localhost:3001");

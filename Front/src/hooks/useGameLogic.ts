@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { SelectedCell, CellStatus } from '../components/Game/Game.types';
 import  {useGameStore} from '../store'
-import { saveGameResult, confirmExitGame, resetGame } from '../utils/'; // Import utilities
+import { saveGameResult, confirmExitGame, resetGame } from '../utils/'; 
 
 export const useGameLogic = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
