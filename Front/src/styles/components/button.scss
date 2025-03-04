@@ -1,4 +1,4 @@
-@import '../global/variables.scss';
+@use '../global/variables' as *;
 
 .start-game-button {
   border: $border-width solid $danger-color;

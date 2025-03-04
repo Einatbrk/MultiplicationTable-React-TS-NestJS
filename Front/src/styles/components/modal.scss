@@ -1,4 +1,4 @@
-@import '../global/variables.scss';
+@use '../global/variables' as *;
 .modal-backdrop {
   position: fixed;
   max-width: fit-content;

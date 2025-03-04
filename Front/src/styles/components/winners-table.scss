@@ -1,4 +1,4 @@
-@import '../global/variables.scss';
+@use '../global/variables' as *;
 .winners-table-container {
   display: flex;
   justify-content: center;
@@ -78,11 +78,6 @@
   right: 20%;
 }
 
-// .buttons-container {
-//   display: flex;
-//   justify-content: space-between;
-//   margin-top: 20px;
-// }
 .buttons-container {
   display: flex;
   justify-content: space-between;
