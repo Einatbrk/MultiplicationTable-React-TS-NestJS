@@ -1,21 +1,50 @@
 @use '../global/variables' as *;
 
+// .start-game-button {
+//   position: absolute;
+//   left: 50%;
+//   background-color: $primary-color;
+//   transform: translateX(-50%);
+//   z-index: 10;
+//   border: $border-width solid $danger-color;
+//   border-radius: $border-radius;
+//   padding: $padding-medium;
+//   top: 1%;
+
+// }
+// .start-game-button {
+//   position: relative;
+//   background-color: cornflowerblue;
+//   border: 2px solid red;
+//   border-radius: 10px;
+//   padding: 5px 5px;
+//   font-size: clamp(14px, 1.8vw, 22px);
+//   margin-top: auto;
+// }
 .start-game-button {
-  border: $border-width solid $danger-color;
-  border-radius: $border-radius;
-  font-size: $font-size-small;
-  background-color: $background-color;
-  font-family: $primary-font;
-  padding: $padding-small $padding-medium;
+  position: relative;
+  background-color: cornflowerblue;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: calc(0.2vw + 3px) calc(0.6vw + 6px); // ❗ עדכון רך יותר ❗
+  font-size: calc(0.5vw + 9px);
+  width: 30%; // ❗ **שהכפתור יתאים את עצמו לרוחב הלוח** ❗
+  max-width: 140px; // ❗ **תקרה הגיונית כדי שלא יתפרע** ❗
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
 }
 .close-perfect-score-btn{
   border: $border-width solid $danger-color;
   border-radius: $border-radius;
   background-color: $background-color;
-  padding: $padding-small $padding-medium;
+  padding: $padding-large;
   color: rgb(67, 207, 209);
   width: fit-content;
   font-family: $primary-font;
+
   
 }
 .response-content-button {
@@ -28,19 +57,31 @@
   text-shadow: 0px 1px 0px #ffffff;
 }
 
+// .top-left-button {
+//   position: absolute;
+//   top: $padding-medium;
+//   left: $padding-medium;
+//   z-index: 10;
+//   border: $border-width solid $border-color;
+//   font-size: large;
+//   font-weight: $font-weight-bold;
+//   border-radius: $border-radius;
+//   color: $border-color;
+//   background-color: $secondary-color;
+//   font-family: $primary-font;
+//   padding: $padding-large $padding-medium;
+// }
 .top-left-button {
   position: absolute;
-  top: $padding-medium;
-  left: $padding-medium;
-  z-index: 10;
-  border: $border-width solid $border-color;
-  font-size: large;
-  font-weight: $font-weight-bold;
-  border-radius: $border-radius;
-  color: $border-color;
-  background-color: $secondary-color;
-  font-family: $primary-font;
-  padding: $padding-large $padding-medium;
+  top: 3.5vh;
+  left: 3vw;
+  font-size: clamp(16px, 2.2vw, 24px);
+  padding: 10px 20px;
+  background-color: gold;
+  border: 2px solid black;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 100;
 }
 .initial-button {
   background-color: #3498db;

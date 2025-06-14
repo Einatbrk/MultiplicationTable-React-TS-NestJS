@@ -14,3 +14,4 @@ const WinnersBoardModal:React.FC = () => {
 }
 
 export default WinnersBoardModal;
+

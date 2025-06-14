@@ -1,64 +1,219 @@
 @use '../global/variables' as *;
+
+// .login-container {
+//   position: relative;
+//   width: 100%;  
+//   height:auto;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   background:none;  
+//   direction: rtl;
+//   border: 4px solid pink;
+// }
+// .login-container {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   border: 5px solid pink;
+// }
+
+// .login-container {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   overflow: hidden; // ❗ דואג ששום דבר לא יחרוג ❗
+//   border: 5px solid pink;
+// }
+// .login-container {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content:center;
+//   border: 5px solid pink;
+// }
 .login-container {
-  position: relative;
-  display: flex;
-  direction: rtl;
-  justify-content: center;
-  flex-direction: row;
-
-  height: 100%;
   width: 100%;
-  background-image: url('/images/login.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.login-content {
-  text-align: center;
-  height: 50%;
-  width: 70%;
-  max-width: 600px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  font-family: 'Rounded Mplus 1c';
-  color:$background-color;
-  font-weight: bolder;
-  font-size: 20px;
-}
+  justify-content: space-between; // ❗ **מבטיח שהתוכן נמתח על כל הגובה!** ❗
+  align-items: center;
 
+}
+// .login-content {
+//   width: 100%;
+//   height: auto;
+//   text-align: center;
+//   font-family: 'Rounded Mplus 1c', sans-serif;
+//   border: 4px solid red;
+// }
+
+// .login-content {
+//   width: 90%;
+//   text-align: center;
+//   border: 5px solid brown;
+// }
+// .login-content {
+//   width: 100%; // ❗ שייתפס על כל הרוחב של האב ❗
+//   height: 100%;
+//   text-align: center;
+//   overflow: hidden;
+//   border: 5px solid brown;
+// }
+// .login-content {
+//   width: 90%;
+//   max-height: 80%; // ❗ מבטיח שהתוכן לא יעבור את הגבול ❗
+//   text-align: center;
+//   overflow: hidden; 
+//   border: 5px solid brown;
+// }
+.login-content {
+  width: 100%; // ❗ נותן קצת מרווח פנימי ❗
+  max-height: 100%;
+  text-align: center;
+  overflow: hidden; 
+  flex-grow: 1;
+}
+// .login-title {
+//   font-size: 2vw;
+//   font-weight: bold;
+// }
+.login-title {
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: bold;
+}
+// .login-title {
+//   font-size: clamp(18px, 3vw, 32px); // ❗ רספונסיבי לחלוטין ❗
+//   font-weight: bold;
+//   border: 2px solid lightblue;
+// }
+// .gender-selection {
+//   display: flex;
+//   justify-content: center;
+//   gap: 3vw;
+//   border: 5px solid grey;
+//   width: 100%;
+//   height: 30%;
+// }
+// .gender-selection {
+//   display: flex;
+//   justify-content: center;
+//   gap: 1.2vw;
+//   width: 100%;
+// }
+// .gender-selection {
+//   display: flex;
+//   justify-content: center;
+//   gap: 1.2vw;
+//   width: 100%;
+//   max-height: 40%; // ❗ מונע מהתמונות להתפרע ❗
+//   overflow: hidden;
+// }
+// .gender-selection {
+//   display: flex;
+//   justify-content: center;
+//   gap: 1.2vw;
+//   width: 100%;
+//   border: 2px solid purple;
+// }
+
+// .gender-selection {
+//   display: flex;
+//   justify-content: center;
+//   gap: 1vw;
+//   width: 100%;
+//   max-height: 50%;
+//   overflow: hidden;
+//   border: 2px solid purple;
+// }
 .gender-selection {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding: 55px;
+  align-items: center; // ❗ **מוודא שהתמונות נשארות באמצע כמו ילדים טובים** ❗
+  gap: 1vw;
+  width: 100%;
+  flex-grow: 1; // ❗ **משתלט על כל השטח כמו שצריך** ❗
+  padding: clamp(5px, 1.5vw, 15px) 0; // ❗ **תוספת padding רספונסיבי כדי לוודא מרווח תקין** ❗
+  overflow: hidden;
 }
+//adding position and top margin
+// .login-gender-image {
+//   width: 5vw;
+//   height: auto;
+//   cursor: pointer;
+//   position: relative;
+//   border: 5px transparent;
+// }
+// .login-gender-image {
+//   width: 35%; // ❗ כל דמות תתפוס עד 35% מהרוחב של האב ❗
+//   height: auto;
 
+//   object-fit: contain; // ❗ מונע מהתמונה לצאת מהקופסה ❗
+// }
+// .login-gender-image {
+//   width: clamp(40px, 8vw, 90px); // ❗ קטן יותר, שיתאים לקופסה ❗
+//   height: auto;
+//   max-height: 100%; // מוודא שהתמונות לא עוברות את המסגרת
+//   object-fit: contain; // ❗ לא מעוות את התמונה ❗
+//   cursor: pointer;
+// }
+// .login-gender-image {
+//   width: clamp(35px, 7vw, 85px); // ❗ דואג שהתמונה תישאר בגבול ❗
+//   height: auto;
+//   max-height: 100%;
+//   object-fit: contain;
+//   cursor: pointer;
+// }
 .login-gender-image {
-  width: 100px;
-  height: 150px;
+  width: clamp(35px, 7vw, 85px);
+  height: auto;
+  max-height: 90%; // ❗ **שלא יגלשו, אבל עדיין יתפסו מקום כמו שצריך** ❗
+  aspect-ratio: 1/1.4;
+  object-fit: contain;
   cursor: pointer;
-  transition: border 0.3s ease;
+}
+// .login-buttons-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   position: relative;
+// }
+// .login-buttons-container {
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+// }
+// .login-buttons-container {
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   margin-top: auto; // ❗ מבטיח שהכפתור יישאר בפנים ❗
+// }
+.login-buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+}
+.boy-selected {
+  outline: 4px solid blue;
+  border-radius: 10px;
+  outline-offset: 10px; 
 }
 
-.boy-selected {
-  border: 7px solid blue;
-  border-radius: 5px;
-}
 
 .girl-selected {
-  border: 7px solid pink;
-  border-radius: 5px;
-}
-.login-content input {
-  margin: 10px;
-  font-family: 'Rounded Mplus 1c';
-  border-radius: 5px;
-}
-
-.loginContent label {
-  font-family: 'Rounded Mplus 1c';
-  font-weight: bolder;
+  outline: 4px solid pink;
+  border-radius: 10px;
+  outline-offset: 10px; 
 }

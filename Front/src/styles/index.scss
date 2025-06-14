@@ -1,14 +1,21 @@
+@use './global/reset';
+@use './global/variables';
+@use './global/fonts';
+@use './global/index';
+
 @use './components/button';
 @use './components/game-header';
 @use './components/game';
-@use './components/login';
+@use './components/login.scss';
 @use './components/modal';
 @use './components/table';
-@use './pages/game-page';
-@use './pages/login-page';
-@use './global/fonts';
-@use './global/index';
-@use './global/mixins';
-@use './global/reset';
-@use './global/variables';
 @use './components/perfect-score';
+@use './components/winners-table.scss';
+@use './pages/game-page.scss';
+@use './pages/login-page.scss';
+
+
+
+
+
+

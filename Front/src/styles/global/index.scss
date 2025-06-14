@@ -1,12 +1,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: white;
   color: #333;
 }
 
 .container {
   width: 100vw;
-  height:100vh;
-  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

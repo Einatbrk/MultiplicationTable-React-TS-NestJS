@@ -2,7 +2,7 @@ import React from 'react';
 import { InputProps } from './index.ts';
 
 
-const Input: React.FC<InputProps> = ({ label, type, value, onChange, placeholder }) => {
+const Input: React.FC<InputProps> = ({ label, type, value, onChange, placeholder, autoFocus }) => {
 
   return (
     <div>  
@@ -12,6 +12,7 @@ const Input: React.FC<InputProps> = ({ label, type, value, onChange, placeholder
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        autoFocus={autoFocus} 
       />
     </div>
   );
